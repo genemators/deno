@@ -48,7 +48,7 @@ const Footer = (props: { simple?: boolean }) => (
       </nav>
       <div className="mt-9 flex justify-center">
         <a
-          href="https://github.com/denoland"
+          href="https://github.com/genemators/deno"
           className="text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">GitHub</span>
@@ -96,7 +96,7 @@ const Footer = (props: { simple?: boolean }) => (
             src="https://img.shields.io/github/workflow/status/denoland/rusty_v8/ci/master?label=rusty_v8&logo=github"
           />
         </a>
-        <a href="https://github.com/genemators/deno">
+        <a href="https://github.com/denoland/deno_website2">
           <img
             className="m-2 opacity-75"
             alt="denoland/deno_website2 CI"
