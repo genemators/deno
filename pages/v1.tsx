@@ -53,7 +53,7 @@ const V1 = (props: Props) => {
         </h1>
         <p className="text-gray-500 mt-3 leading-tight">2020-05-13</p>
         <p className="text-gray-500 mt-3 leading-tight">
-          Ryan Dahl, Bert Belder, and Bartek Iwańczuk
+          Ryan Dahl, Bert Belder, va Bartek Iwańczuk
         </p>
         <div className="mt-8">
           <Markdown

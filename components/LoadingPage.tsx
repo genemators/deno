@@ -9,11 +9,12 @@ function LoadingPage() {
         <title>Deno</title>
         {metaDescription({
           title: "Deno",
-          description: "Deno, a secure runtime for JavaScript and TypeScript.",
+          description: "Deno - bu JavaScript va TypeScript dasturlash tillarida yozilgan dasturlani " +
+              "ishga tushuruvchi xavfsiz yordamchi dastur!",
           image: "https://deno.land/v1_wide.jpg",
         })}
       </Head>
-      <div className="bg-gray-50 min-h-full"></div>
+      <div className="bg-gray-50 min-h-full"/>
     </div>
   );
 }

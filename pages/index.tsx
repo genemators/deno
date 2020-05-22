@@ -69,9 +69,9 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
       <Head>
         <title>Deno</title>
         {metaDescription({
-          title: "Deno — A secure runtime for JavaScript and TypeScript.",
+          title: "Deno — JavaScript va TypeScript ishga tushuruvchi xavfsiz yordamchi dastur.",
           description:
-            "Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in Rust.",
+            "Deno bu oddiy, zamonaviy va xafvsiz JavaScript va TypeScript ishga tushuruvchi dastura. Deno V8 yordamchi dasturi va Rust dasturlash tilini ishlatadi.",
           image: "https://deno.land/v1_wide.jpg",
         })}
       </Head>
@@ -80,11 +80,11 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
           <div className="max-w-screen-xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div className="pr-16 sm:text-center sm:px-16">
               <p className="font-medium text-white">
-                <span>Deno 1.0 is out!</span>
+                <span>Deno 1.0 versiyasi e'lon qilindi!</span>
                 <span className="block sm:ml-2 sm:inline-block">
                   <Link href="/v1">
                     <a className="text-white font-bold underline">
-                      Read the blog post &rarr;
+                      Blog postimizni o'qing &rarr;
                     </a>
                   </Link>
                 </span>
@@ -99,9 +99,9 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
               Deno
             </h1>
             <h2 className="mt-4 sm:mt-5 font-light text-2xl text-center leading-tight text-gray-900">
-              A <strong className="font-semibold">secure</strong> runtime for{" "}
-              <strong className="font-semibold">JavaScript</strong> and{" "}
-              <strong className="font-semibold">TypeScript</strong>.
+              Bu <strong className="font-semibold">JavaScript</strong> va{" "}
+              <strong className="font-semibold">TypeScript</strong>{" "}
+              uchun yaratilgan <strong className="font-semibold">xavfsiz</strong> yordamchi dastur.
             </h2>
           </div>
         </div>

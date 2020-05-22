@@ -21,7 +21,7 @@ const Footer = (props: { simple?: boolean }) => (
             href="https://doc.deno.land/https/github.com/denoland/deno/releases/latest/download/lib.deno.d.ts"
             className="text-base leading-6 text-gray-500 hover:text-gray-900"
           >
-            Runtime API
+            Yordamchi dastur API lari
           </a>
         </div>
         <div className="px-5 py-2">
@@ -34,14 +34,14 @@ const Footer = (props: { simple?: boolean }) => (
         <div className="px-5 py-2">
           <Link href="/x">
             <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              3 darajali modullar
+              Uchinchi darajali modullar
             </a>
           </Link>
         </div>
         <div className="px-5 py-2">
           <Link href="/benchmarks">
             <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              Benchmarks
+              Testlar
             </a>
           </Link>
         </div>

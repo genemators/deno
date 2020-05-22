@@ -173,8 +173,8 @@ function Manual() {
       <Head>
         <title>The Deno Manual</title>
         {metaDescription({
-          title: "The Deno Manual",
-          description: partialContent || "The Deno Manual",
+          title: "Deno Qo'llanmasi",
+          description: partialContent || "Deno Qo'llanmasi",
           url: "https://deno.land/manual",
           image: "https://deno.land/v1_wide.jpg",
         })}
@@ -192,10 +192,7 @@ function Manual() {
                 leaveTo="opacity-0"
               >
                 <div className="fixed inset-0">
-                  <div
-                    className="absolute inset-0 bg-gray-600 opacity-75"
-                    onClick={hideSidebar}
-                  ></div>
+                  <div className="absolute inset-0 bg-gray-600 opacity-75" onClick={hideSidebar}/>
                 </div>
               </Transition>
               <Transition
@@ -238,7 +235,7 @@ function Manual() {
                         />
                         <div className="mx-4 flex flex-col justify-center">
                           <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                            Deno Manual
+                            Deno Qo'llanmasi
                           </div>
                         </div>
                       </a>
@@ -273,7 +270,7 @@ function Manual() {
                   <img src="/logo.svg" alt="logo" className="w-auto h-12" />
                   <div className="mx-4 flex flex-col justify-center">
                     <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                      Deno Manual
+                      Deno Qo'llanmasi
                     </div>
                   </div>
                 </a>
@@ -387,31 +384,31 @@ function Manual() {
                       className="text-gray-500 hover:text-gray-400 font-normal float-right"
                       href={getDocURL(version ?? "master", path)}
                     >
-                      View on GitHub
+                      GitHub da ko'zdan kechirish
                     </a>
                   </div>
                 </>
               ) : (
                 <div className="w-full my-8">
-                  <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8"></div>
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10"></div>
-                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
-                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-3/4 bg-gray-100 h-3 mt-4"></div>
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10"></div>
-                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-3/4 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-3/4 bg-gray-100 h-3 mt-10"></div>
-                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8"/>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10"/>
+                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"/>
+                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-3/4 bg-gray-100 h-3 mt-4"/>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"/>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10"/>
+                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-3/4 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"/>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-3/4 bg-gray-100 h-3 mt-10"/>
+                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"/>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"/>
+                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"/>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"/>
                 </div>
               )}
             </div>
