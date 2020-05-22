@@ -71,7 +71,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
         {metaDescription({
           title: "Deno — JavaScript va TypeScript ishga tushuruvchi xavfsiz yordamchi dastur.",
           description:
-            "Deno bu oddiy, zamonaviy va xafvsiz JavaScript va TypeScript ishga tushuruvchi dastura. Deno V8 yordamchi dasturi va Rust dasturlash tilini ishlatadi.",
+            "Deno bu oddiy, zamonaviy va xafvsiz JavaScript va TypeScript ishga tushuruvchi dastur. Deno V8 yordamchi dasturi va Rust dasturlash tillarini ishlatadi.",
           image: "https://deno.land/v1_wide.jpg",
         })}
       </Head>
@@ -107,23 +107,25 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
           <p className="my-4 text-gray-700">
-            Deno is a simple, modern and secure runtime for JavaScript and
-            TypeScript that uses V8 and is built in Rust.
+            Deno bu Javascript va TypeScript uchun yaratilgan
+            oddiy, zamonaviy va xavfsiz yordamchi dastur.
+            Deno V8 javascript interpritatori va Rust dasturlash
+            tillarini ishlatadi.
           </p>
           <ol className="ml-8 list-disc text-gray-700">
             <li>
-              Secure by default. No file, network, or environment access, unless
-              explicitly enabled.
+              Boshidan o'zi xavfsiz. Ruxsat berilmaguncha na fayl, na internet yoki muhitga ruxsat yo'q.
             </li>
-            <li>Supports TypeScript out of the box.</li>
-            <li>Ships only a single executable file.</li>
+            <li>TypeScript va EcmaScript qo'llab quvvatlaydi.</li>
+            <li>Birgina ishga tushuriladigan fayl.</li>
             <li>
-              Has built-in utilities like a dependency inspector (deno info) and
-              a code formatter (deno fmt).
+              Ichida tayyor utilitlar mavjud. Masalan,
+              qaramchi inspektor "dependency inspector" (deno info) va
+              kodlarni formatlovchi (deno fmt).
             </li>
             <li>
-              Has a set of reviewed (audited) standard modules that are
-              guaranteed to work with Deno:{" "}
+              Ichida ko'rib chiqilgan va Deno bilan ishlashi anniq
+              bo'lgan standart modullar mavjud:{" "}
               <a href="https://deno.land/std" className="link">
                 deno.land/std
               </a>
@@ -134,7 +136,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
           <Link href="#installation">
             <a className="hover:underline">
               <h3 className="font-bold text-xl" id="installation">
-                Installation
+                O'rnatish jarayonlari
               </h3>
             </a>
           </Link>
@@ -144,16 +146,16 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
           <Link href="#getting-started">
             <a className="hover:underline">
               <h3 className="font-bold text-xl" id="getting-started">
-                Getting Started
+                Ishni boshlash
               </h3>
             </a>
           </Link>
-          <p className="my-4 text-gray-700">Try running a simple program:</p>
+          <p className="my-4 text-gray-700">Keling, oddiy dastur ishga tushurishga harakat qilamiz:</p>
           <CodeBlock
             code="deno run https://deno.land/std/examples/welcome.ts"
             language="bash"
           />
-          <p className="my-4 text-gray-700">Or a more complex one:</p>
+          <p className="my-4 text-gray-700">Yoki yanada qiyinroq misol:</p>
         </div>
         <div
           className="mx-auto px-4 sm:px-6 md:px-8"
@@ -358,10 +360,10 @@ const InstallSection = () => {
   const cargo = (
     <div key="cargo" className="my-4 text-gray-700">
       <p className="py-2">
-        Build and install from source using{" "}
         <a href="https://crates.io/crates/deno" className="link">
           Cargo
         </a>
+        {" "}orqali yuklang va qayta yasab oling
       </p>
       <CodeBlock language="bash" code={`cargo install deno`} />
     </div>

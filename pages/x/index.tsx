@@ -30,66 +30,66 @@ const ThirdPartyRegistryList = () => {
   return (
     <>
       <Head>
-        <title>Deno Third Party Modules</title>
+        <title>Deno Uchinchi Darajali Modullari</title>
 
         {metaDescription({
-          title: "Deno Third Party Modules",
-          description: "Third Party Modules for Deno.",
+          title: "Deno Uchinchi Darajali Modullari",
+          description: "Deno uchun yaratilgan Uchinchi Darajali Modullar.",
           url: "https://deno.land/x",
           image: "https://deno.land/v1_wide.jpg",
         })}
       </Head>
       <div className="bg-gray-50 min-h-full">
-        <Header subtitle="Third Party Modules" />
+        <Header subtitle="Uchinchi Darajali Modullar" />
         <div className="">
           <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 pt-4">
             <div className="text-gray-900 mt-4 sm:mt-8 break-words">
               <p>
-                <span className="font-semibold">deno.land/x</span> is a URL
-                rewriting service for Deno scripts. The basic format of code
-                URLs is{" "}
+                <span className="font-semibold">deno.land/x</span> bu
+                o'zgaruvchan Deno scriptlari uchun yaratilgan URL servis.
+                Odatiy URL formati bu{" "}
                 <InlineCode>
                   https://deno.land/x/MODULE_NAME@BRANCH/SCRIPT.ts
                 </InlineCode>
-                . If you leave out the branch, it will default to the module’s
-                default branch, usually <InlineCode>master</InlineCode>.
+                . Agar branch qismini ko'rsatmasangiz, servis shu modulning doimiy
+                branch URL ini tanlab oladi, odatda bu <InlineCode>master</InlineCode>.
               </p>
               <p className="text-gray-900 mt-4">
-                Functionality built-in to Deno is not listed here. The built-in
-                runtime is documented on{" "}
+                Funksionallik bo'yicha Deno ning ichki modullar bu yerda ko'rsatilmaydi. Ichki
+                yoramchi dasturlar{" "}
                 <a href="https://doc.deno.land" className="link">
                   deno doc
                 </a>{" "}
-                and in{" "}
+                va{" "}
                 <Link href="/[identifier]" as="/manual">
-                  <a className="link">the manual</a>
-                </Link>
-                . See{" "}
+                  <a className="link">qo'llanma</a>
+                </Link>{" "}
+                sahifalarida ko'rsatilgan. Standart modullari uchun{" "}
                 <Link href="/[identifier]" as="/std">
                   <a className="link">/std</a>
                 </Link>{" "}
-                for the standard modules.
+                ga o'ting.
               </p>
               <p className="text-gray-900 mt-4">
-                To add to this list, edit{" "}
+                Ro'yxatga o'zingizning modulingizni qo'shish uchun,{" "}
                 <a
                   href="https://github.com/denoland/deno_website2/blob/master/database.json"
                   className="link"
                 >
                   database.json
                 </a>
-                .
+                {" "}ga o'zgartirish kiriting.
               </p>
             </div>
             <div className="mt-12">
               <label htmlFor="query" className="font-medium sr-only">
-                Search
+                Qidirish...
               </label>
               <input
                 id="query"
                 className="block w-full px-4 py-2 leading-normal bg-white border border-gray-200 rounded-lg outline-none shadow hover:shadow-sm focus:shadow-sm appearance-none focus:border-gray-300 hover:border-gray-300 mt-1"
                 type="text"
-                placeholder="Search"
+                placeholder="Qidirish..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
@@ -98,7 +98,7 @@ const ThirdPartyRegistryList = () => {
           <div className="sm:max-w-screen-lg sm:mx-auto sm:px-6 md:px-8 pb-4 sm:pb-12">
             {list.length == 0 ? (
               <div className="px-4 sm:px-0 py-4 text-center sm:text-left text-sm leading-5 font-medium text-gray-500 truncate">
-                No modules found
+                Modul topilmadi
               </div>
             ) : (
               <div className="bg-white sm:shadow border border-gray-200 overflow-hidden sm:rounded-md mt-4">

@@ -189,7 +189,7 @@ const Registry = () => {
       </Head>
       <div className="bg-gray-50 min-h-full">
         <Header
-          subtitle={name === "std" ? "Standard Library" : "Third Party Modules"}
+          subtitle={name === "std" ? "Standart Modullar" : "Uchinchi Darajali Modullar"}
         />
         <div className="">
           <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-2 pb-8">

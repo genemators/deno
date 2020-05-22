@@ -21,7 +21,7 @@ const Footer = (props: { simple?: boolean }) => (
             href="https://doc.deno.land/https/github.com/denoland/deno/releases/latest/download/lib.deno.d.ts"
             className="text-base leading-6 text-gray-500 hover:text-gray-900"
           >
-            Yordamchi dastur API lari
+            Yordamchi API
           </a>
         </div>
         <div className="px-5 py-2">
