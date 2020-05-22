@@ -169,119 +169,120 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8">
           <p className="my-4 text-gray-700">
-            You can find a more in depth introduction, examples, and environment
-            setup guides in{" "}
             <Link href="/[identifier]" as="/manual">
-              <a className="link">the manual</a>
-            </Link>
-            .
+              <a className="link">Qo'llanmada</a>
+            </Link>{" "}
+            birinchi darajali ma'lumotlar, misollar
+            va muhitni o'rnatishga doir ma'lumotlar
+            topsangiz bo'ladi.
           </p>
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
           <Link href="#runtime-documentation">
             <a className="hover:underline">
               <h3 className="font-bold text-xl" id="runtime-documentation">
-                Runtime Documentation
+                Yordamchi dastur dokumentatsiyasi
               </h3>
             </a>
           </Link>
           <p className="my-4 text-gray-700">
-            The basic runtime documentation for Deno can be found on{" "}
+            Deno yordamchi dasturi haqidagi boshlang'ich ma'lumotlarni{" "}
             <a
               href="https://doc.deno.land/https/github.com/denoland/deno/releases/latest/download/lib.deno.d.ts"
               className="link"
             >
               doc.deno.land
-            </a>
-            .
+            </a>{" "}
+            dan topsangiz bo'ladi.
           </p>
           <p className="my-4 text-gray-700">
-            Deno comes with{" "}
+            Deno ning{" "}
             <Link href="/[identifier]" as="/manual">
-              <a className="link">a manual</a>
+              <a className="link">qo'llanmasida</a>
             </Link>{" "}
-            which contains more in depth explanations about the more complex
-            functions of the runtime, an introduction to the concepts that Deno
-            is built on, details about the internals of Deno, how to embed Deno
-            in your own application and how to extend Deno using Rust plugins.
+            yordamchi dastur ichida keladigan murakkab funksiyalar haqida
+            chuqur izohlar, Deno da dasturlash haqidagi konseptsiyalar, Deno
+            ning ichki tuzilishi haqidagi ma'lumotlar, Deno ga o'zingiz yozgan
+            dasturlaringiz moslash va Deno ni Rust plaginlari yordamida kengaytirish
+            haqidagi ma'lumotlar mavjud.
           </p>
           <p className="my-4 text-gray-700">
-            The manual also contains information about the built in tools that
-            Deno provides.
+            Qo'llanma ichida Deno taqdim etadigan ichki asboblari haqida ham ma'lumotlar mavjud.
           </p>
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
           <Link href="#standard-modules">
             <a className="hover:underline">
               <h3 className="font-bold text-xl" id="standard-modules">
-                Standard Modules
+                Standart Modullar
               </h3>
             </a>
           </Link>
           <p className="my-4 text-gray-700">
-            Next to the Deno runtime, Deno also provides a list of audited
-            standard modules that are reviewed by the core Deno team and are
-            guaranteed to work with a specific Deno version. These live
-            alongside the Deno source code in the{" "}
+            Deno yordamchi dasturidan tashqari, Deno tasdiqlangan standart
+            modullar taqdim etadi va bu modullar offitsial Deno guruhi
+            tomonidan ko'rib chiqilgan va Denoning ko'rsatilgan versiyasi bilan
+            ishlashi kafolatlangan. Bu modullar haqidagi yangilik va o'zgarishlarni{" "}
             <a href="https://github.com/denoland/deno" className="link">
               denoland/deno
             </a>{" "}
-            repository.
+            repozitoriya sahifasidan kuzatishingiz mumkin.
           </p>
           <p className="my-4 text-gray-700">
-            These standard modules are hosted at{" "}
+            Shu standart modullar{" "}
             <Link href="/[identifier]" as="/std">
               <a className="link">deno.land/std</a>
             </Link>{" "}
-            and are distributed via URLs like all other ES modules that are
-            compatible with Deno.
+            da joylashtirilgan va bu modullarga EcmaScript modul ko'rsatish
+            usuli yordamida Deno dasturlash jarayonida ishlatish mumkin.
           </p>
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
           <Link href="#third-party-modules">
             <a className="hover:underline">
               <h3 className="font-bold text-xl" id="third-party-modules">
-                Third Party Modules
+                Uchinchi Darajali Modullar
               </h3>
             </a>
           </Link>
           <p className="my-4 text-gray-700">
-            Deno can import modules from any location on the web, like GitHub, a
-            personal webserver, or a CDN like{" "}
+            Deno modullarni istalgan web lokatsiyadan yuklab oladi,
+            misol uchun GitHub dan, shaxsiy webserver yoki{" "}
             <a href="https://pika.dev" className="link">
               pika.dev
             </a>{" "}
-            or{" "}
+            va{" "}
             <a href="https://jspm.io" className="link">
               jspm.io
-            </a>
-            .
+            </a>{" "}
+            larga o'xshagan CDN web servislaridan.
           </p>
           <p className="my-4 text-gray-700">
-            To make it easier to consume third party modules Deno provides some
-            built in tooling like <InlineCode>deno info</InlineCode> and{" "}
-            <InlineCode>deno doc</InlineCode>. deno.land also provides a web UI
-            for viewing module documentation. It is available at{" "}
+            Uchinchi Darajali Modullar haqida ma'lumotlar olish osonlashtirish maqsadida
+            Deno o'zida keladigan <InlineCode>deno info</InlineCode> va{" "}
+            <InlineCode>deno doc</InlineCode> komandalarini taqdim etadi.
+            Shuningdek, modullar qo'llanmasi ko'zdan kechirish uchun web interfeys
+            ham taqdim etadi va u {" "}
             <a href="https://doc.deno.land" className="link">
               doc.deno.land
-            </a>
-            .
+            </a>{" "}
+            sahifasida joylashtirilgan.
           </p>
           <p className="my-4 text-gray-700">
-            deno.land also provides a simple public hosting service for ES
-            modules that work with Deno. It can be found at{" "}
+            Hattoki, Deno, EcmaScript modullar uchun sodda hosting servislari
+            taqdim etadi va Deno dasturlash jarayonida ishlatiladi. Bu servisni{" "}
             <Link href="/x">
               <a className="link">deno.land/x</a>
-            </Link>
-            .
+            </Link>{" "}
+            sahifasidan topishingiz mumkin.
           </p>
           <p className="my-4 text-gray-700">
-            Here is a random selection of the modules that are currently
-            available on{" "}
+            Quyida hozirgi vaqtda{" "}
             <Link href="/x">
               <a className="link">deno.land/x</a>
-            </Link>
-            :
+            </Link>{" "}
+            sahifasida mavjud bo'lgan tasodifiy modullar ro'yxatini
+            ko'rishingiz mumkin:
           </p>
         </div>
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
@@ -372,12 +373,13 @@ const InstallSection = () => {
   return (
     <>
       <p className="my-4 text-gray-700">
-        Deno ships as a single executable with no dependencies. You can install
-        it using the installers below, or download a release binary from the{" "}
+        Deno ishga tushuriladigan va boshqa fayllarga qaram bo'lmagan
+        fayl shaklida keladi. Quyidagi o'rnatuvchilar yordamida Deno ni
+        o'rnatishingiz mumkin, yoki binarniy{" "}
         <a href="https://github.com/denoland/deno/releases" className="link">
-          releases page
-        </a>
-        .
+          relizlar sahifasidan
+        </a>{" "}
+        yuklab oling.
       </p>
       {shell}
       {powershell}
@@ -386,11 +388,11 @@ const InstallSection = () => {
       {scoop}
       {cargo}
       <p className="my-4 text-gray-700">
-        See{" "}
+        O'rnatish haqida qo'shimcha ma'lumotlar uchun{" "}
         <a className="link" href="https://github.com/denoland/deno_install">
           deno_install
         </a>{" "}
-        for more installation options.
+        sahifasiga o'ting.
       </p>
     </>
   );
