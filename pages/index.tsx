@@ -71,7 +71,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
         {metaDescription({
           title: "Deno — JavaScript va TypeScript ishga tushuruvchi xavfsiz yordamchi dastur.",
           description:
-            "Deno bu oddiy, zamonaviy va xafvsiz JavaScript va TypeScript ishga tushuruvchi dastur. Deno V8 yordamchi dasturi va Rust dasturlash tillarini ishlatadi.",
+            "Deno bu sodda, zamonaviy va xafvsiz JavaScript va TypeScript ishga tushuruvchi dastur. Deno V8 yordamchi dasturi va Rust dasturlash tillarini ishlatadi.",
           image: "https://deno.land/v1_wide.jpg",
         })}
       </Head>
