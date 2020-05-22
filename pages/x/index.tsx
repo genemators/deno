@@ -46,17 +46,18 @@ const ThirdPartyRegistryList = () => {
             <div className="text-gray-900 mt-4 sm:mt-8 break-words">
               <p>
                 <span className="font-semibold">deno.land/x</span> bu
-                o'zgaruvchan Deno scriptlari uchun yaratilgan URL servis.
-                Odatiy URL formati bu{" "}
+                o'zgaruvchan Deno scriptlari uchun yaratilgan URL servis. Odatiy
+                URL formati bu{" "}
                 <InlineCode>
                   https://deno.land/x/MODULE_NAME@BRANCH/SCRIPT.ts
                 </InlineCode>
-                . Agar branch qismini ko'rsatmasangiz, servis shu modulning doimiy
-                branch URL ini tanlab oladi, odatda bu <InlineCode>master</InlineCode>.
+                . Agar branch qismini ko'rsatmasangiz, servis shu modulning
+                doimiy branch URL ini tanlab oladi, odatda bu{" "}
+                <InlineCode>master</InlineCode>.
               </p>
               <p className="text-gray-900 mt-4">
-                Funksionallik bo'yicha Deno ning ichki modullar bu yerda ko'rsatilmaydi. Ichki
-                yoramchi dasturlar{" "}
+                Funksionallik bo'yicha Deno ning ichki modullar bu yerda
+                ko'rsatilmaydi. Ichki yoramchi dasturlar{" "}
                 <a href="https://doc.deno.land" className="link">
                   deno doc
                 </a>{" "}
@@ -77,8 +78,8 @@ const ThirdPartyRegistryList = () => {
                   className="link"
                 >
                   database.json
-                </a>
-                {" "}ga o'zgartirish kiriting.
+                </a>{" "}
+                ga o'zgartirish kiriting.
               </p>
             </div>
             <div className="mt-12">

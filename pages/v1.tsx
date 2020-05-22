@@ -66,7 +66,8 @@ const V1 = (props: Props) => {
             So'nggi iltimos:
           </h2>
           <p>
-            Bizning yordamchi dasturimizni Deno v1.0 hoodie olish yordamida qo'llab quvvatlashni o'ylab ko'ring:
+            Bizning yordamchi dasturimizni Deno v1.0 hoodie olish yordamida
+            qo'llab quvvatlashni o'ylab ko'ring:
           </p>
           <img
             src="/v1_hoodie_mock.png"

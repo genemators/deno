@@ -69,7 +69,8 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
       <Head>
         <title>Deno</title>
         {metaDescription({
-          title: "Deno — JavaScript va TypeScript ishga tushuruvchi xavfsiz yordamchi dastur.",
+          title:
+            "Deno — JavaScript va TypeScript ishga tushuruvchi xavfsiz yordamchi dastur.",
           description:
             "Deno bu sodda, zamonaviy va xafvsiz JavaScript va TypeScript ishga tushuruvchi dastur. Deno V8 yordamchi dasturi va Rust dasturlash tillarini ishlatadi.",
           image: "https://deno.land/v1_wide.jpg",
@@ -100,32 +101,33 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             </h1>
             <h2 className="mt-4 sm:mt-5 font-light text-2xl text-center leading-tight text-gray-900">
               Bu <strong className="font-semibold">JavaScript</strong> va{" "}
-              <strong className="font-semibold">TypeScript</strong>{" "}
-              uchun yaratilgan <strong className="font-semibold">xavfsiz</strong> yordamchi dastur.
+              <strong className="font-semibold">TypeScript</strong> uchun
+              yaratilgan <strong className="font-semibold">xavfsiz</strong>{" "}
+              yordamchi dastur.
             </h2>
           </div>
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
           <p className="my-4 text-gray-700">
-            Deno bu Javascript va TypeScript uchun yaratilgan
-            oddiy, zamonaviy va xavfsiz yordamchi dastur.
-            Deno V8 javascript interpritatori va Rust dasturlash
-            tillarini ishlatadi.
+            Deno bu Javascript va TypeScript uchun yaratilgan oddiy, zamonaviy
+            va xavfsiz yordamchi dastur. Deno V8 javascript interpritatori va
+            Rust dasturlash tillarini ishlatadi.
           </p>
           <ol className="ml-8 list-disc text-gray-700">
             <li>
-              Boshidan o'zi xavfsiz. Ruxsat berilmaguncha na fayl, na internet yoki muhitga ruxsat yo'q.
+              Boshidan o'zi xavfsiz. Ruxsat berilmaguncha na fayl, na internet
+              yoki muhitga ruxsat yo'q.
             </li>
             <li>TypeScript va EcmaScript qo'llab quvvatlaydi.</li>
             <li>Birgina ishga tushuriladigan fayl.</li>
             <li>
-              Ichida tayyor utilitlar mavjud. Masalan,
-              qaramchi inspektor "dependency inspector" (deno info) va
-              kodlarni formatlovchi (deno fmt).
+              Ichida tayyor utilitlar mavjud. Masalan, qaramchi inspektor
+              "dependency inspector" (deno info) va kodlarni formatlovchi (deno
+              fmt).
             </li>
             <li>
-              Ichida ko'rib chiqilgan va Deno bilan ishlashi anniq
-              bo'lgan standart modullar mavjud:{" "}
+              Ichida ko'rib chiqilgan va Deno bilan ishlashi anniq bo'lgan
+              standart modullar mavjud:{" "}
               <a href="https://deno.land/std" className="link">
                 deno.land/std
               </a>
@@ -150,7 +152,9 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
               </h3>
             </a>
           </Link>
-          <p className="my-4 text-gray-700">Keling, oddiy dastur ishga tushurishga harakat qilamiz:</p>
+          <p className="my-4 text-gray-700">
+            Keling, oddiy dastur ishga tushurishga harakat qilamiz:
+          </p>
           <CodeBlock
             code="deno run https://deno.land/std/examples/welcome.ts"
             language="bash"
@@ -172,9 +176,8 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             <Link href="/[identifier]" as="/manual">
               <a className="link">Qo'llanmada</a>
             </Link>{" "}
-            birinchi darajali ma'lumotlar, misollar
-            va muhitni o'rnatishga doir ma'lumotlar
-            topsangiz bo'ladi.
+            birinchi darajali ma'lumotlar, misollar va muhitni o'rnatishga doir
+            ma'lumotlar topsangiz bo'ladi.
           </p>
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
@@ -200,14 +203,15 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             <Link href="/[identifier]" as="/manual">
               <a className="link">qo'llanmasida</a>
             </Link>{" "}
-            yordamchi dastur ichida keladigan murakkab funksiyalar haqida
-            chuqur izohlar, Deno da dasturlash haqidagi konseptsiyalar, Deno
-            ning ichki tuzilishi haqidagi ma'lumotlar, Deno ga o'zingiz yozgan
-            dasturlaringiz moslash va Deno ni Rust plaginlari yordamida kengaytirish
-            haqidagi ma'lumotlar mavjud.
+            yordamchi dastur ichida keladigan murakkab funksiyalar haqida chuqur
+            izohlar, Deno da dasturlash haqidagi konseptsiyalar, Deno ning ichki
+            tuzilishi haqidagi ma'lumotlar, Deno ga o'zingiz yozgan
+            dasturlaringiz moslash va Deno ni Rust plaginlari yordamida
+            kengaytirish haqidagi ma'lumotlar mavjud.
           </p>
           <p className="my-4 text-gray-700">
-            Qo'llanma ichida Deno taqdim etadigan ichki asboblari haqida ham ma'lumotlar mavjud.
+            Qo'llanma ichida Deno taqdim etadigan ichki asboblari haqida ham
+            ma'lumotlar mavjud.
           </p>
         </div>
         <div className="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
@@ -220,9 +224,9 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
           </Link>
           <p className="my-4 text-gray-700">
             Deno yordamchi dasturidan tashqari, Deno tasdiqlangan standart
-            modullar taqdim etadi va bu modullar offitsial Deno guruhi
-            tomonidan ko'rib chiqilgan va Denoning ko'rsatilgan versiyasi bilan
-            ishlashi kafolatlangan. Bu modullar haqidagi yangilik va o'zgarishlarni{" "}
+            modullar taqdim etadi va bu modullar offitsial Deno guruhi tomonidan
+            ko'rib chiqilgan va Denoning ko'rsatilgan versiyasi bilan ishlashi
+            kafolatlangan. Bu modullar haqidagi yangilik va o'zgarishlarni{" "}
             <a href="https://github.com/denoland/deno" className="link">
               denoland/deno
             </a>{" "}
@@ -246,8 +250,8 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             </a>
           </Link>
           <p className="my-4 text-gray-700">
-            Deno modullarni istalgan web lokatsiyadan yuklab oladi,
-            misol uchun GitHub dan, shaxsiy webserver yoki{" "}
+            Deno modullarni istalgan web lokatsiyadan yuklab oladi, misol uchun
+            GitHub dan, shaxsiy webserver yoki{" "}
             <a href="https://pika.dev" className="link">
               pika.dev
             </a>{" "}
@@ -258,11 +262,11 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             larga o'xshagan CDN web servislaridan.
           </p>
           <p className="my-4 text-gray-700">
-            Uchinchi Darajali Modullar haqida ma'lumotlar olish osonlashtirish maqsadida
-            Deno o'zida keladigan <InlineCode>deno info</InlineCode> va{" "}
-            <InlineCode>deno doc</InlineCode> komandalarini taqdim etadi.
-            Shuningdek, modullar qo'llanmasi ko'zdan kechirish uchun web interfeys
-            ham taqdim etadi va u {" "}
+            Uchinchi Darajali Modullar haqida ma'lumotlar olish osonlashtirish
+            maqsadida Deno o'zida keladigan <InlineCode>deno info</InlineCode>{" "}
+            va <InlineCode>deno doc</InlineCode> komandalarini taqdim etadi.
+            Shuningdek, modullar qo'llanmasi ko'zdan kechirish uchun web
+            interfeys ham taqdim etadi va u{" "}
             <a href="https://doc.deno.land" className="link">
               doc.deno.land
             </a>{" "}
@@ -281,8 +285,8 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             <Link href="/x">
               <a className="link">deno.land/x</a>
             </Link>{" "}
-            sahifasida mavjud bo'lgan tasodifiy modullar ro'yxatini
-            ko'rishingiz mumkin:
+            sahifasida mavjud bo'lgan tasodifiy modullar ro'yxatini ko'rishingiz
+            mumkin:
           </p>
         </div>
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
@@ -363,8 +367,8 @@ const InstallSection = () => {
       <p className="py-2">
         <a href="https://crates.io/crates/deno" className="link">
           Cargo
-        </a>
-        {" "}orqali yuklang va qayta yasab oling
+        </a>{" "}
+        orqali yuklang va qayta yasab oling
       </p>
       <CodeBlock language="bash" code={`cargo install deno`} />
     </div>
@@ -373,8 +377,8 @@ const InstallSection = () => {
   return (
     <>
       <p className="my-4 text-gray-700">
-        Deno ishga tushuriladigan va boshqa fayllarga qaram bo'lmagan
-        fayl shaklida keladi. Quyidagi o'rnatuvchilar yordamida Deno ni
+        Deno ishga tushuriladigan va boshqa fayllarga qaram bo'lmagan fayl
+        shaklida keladi. Quyidagi o'rnatuvchilar yordamida Deno ni
         o'rnatishingiz mumkin, yoki binarniy{" "}
         <a href="https://github.com/denoland/deno/releases" className="link">
           relizlar sahifasidan

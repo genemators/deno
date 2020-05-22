@@ -28,16 +28,13 @@ const V1Hoodie = () => {
         <h1 className="text-3xl tracking-tight font-bold text-5xl leading-10">
           Deno 1.0 Hoodie
         </h1>
-        <p className="text-gray-500 mt-3 leading-tight">
-          Sanoqli, Sifatli
-        </p>
+        <p className="text-gray-500 mt-3 leading-tight">Sanoqli, Sifatli</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
           <div>
             <img src="/v1_hoodie_mock.png" alt="deno hoodie" />
           </div>
           <div>
             <p className="text-gray-900">
-
               Deno v1.0 maxsus hoodie uchun cheklangan vaqtni oldindan buyurtma
               qilish orqali Deno loyihasini qo'llab-quvvatlashga yordam bering.
               Ushbu qora zip-up xoodi taniqli Tokiolik xaker va rassom{" "}
@@ -48,9 +45,10 @@ const V1Hoodie = () => {
             </p>
             <p className="text-gray-900 mt-4">
               Aniq bo'lish uchun: bu oldindan buyurtma. Bizda bunday mahsulotlar
-              hali mavjud emas. Yuqoridagi rasm fotoshoplangan masxara. Biz 21-mayga
-              qadar buyurtma olamiz, shundan so'ng cheklangan nashr qilingan kaput
-              endi sotilmaydi. Biz ularni iyulda etkazib berishni kutmoqdamiz.
+              hali mavjud emas. Yuqoridagi rasm fotoshoplangan masxara. Biz
+              21-mayga qadar buyurtma olamiz, shundan so'ng cheklangan nashr
+              qilingan kaput endi sotilmaydi. Biz ularni iyulda etkazib berishni
+              kutmoqdamiz.
             </p>
             <p className="text-gray-900 font-bold text-2xl leading-tight mt-4">
               $100
