@@ -144,7 +144,7 @@ const Registry = () => {
       setReadme(undefined);
       fetch(readmeURL)
         .then((resp) => {
-          if (!resp.ok) throw new Error("README fetch failed.");
+          if (!resp.ok) throw new Error("README topilmadi.");
           return resp.text();
         })
         .then(setReadme)
@@ -179,8 +179,8 @@ const Registry = () => {
           }`,
           description:
             name === "std"
-              ? "The Deno standard library."
-              : "A third party module for Deno.",
+              ? "Deno Standart Moduli."
+              : "Deno uchun yaratilgan Uchinchi Darajali Modul.",
           url: `https://deno.land${!isStd ? "/x" : ""}/${name}${
             version && `@${version}`
           }`,
@@ -210,8 +210,8 @@ const Registry = () => {
                 if (dirEntries === null && raw === null) {
                   return (
                     <ErrorMessage
-                      title="404 - Not Found"
-                      body="This file or directory could not be found."
+                      title="404 - Topilmadi"
+                      body="Ko'rsatilgan fayl yoki direktoriya mavjud emas."
                     />
                   );
                 } else {
@@ -237,7 +237,7 @@ const Registry = () => {
             })()}
             {dirEntries instanceof RegistryError ? (
               <ErrorMessage
-                title="Failed to get directory listing"
+                title="Direktoriya ro'yxati topilmadi"
                 body={dirEntries.message}
               />
             ) : (
@@ -252,7 +252,7 @@ const Registry = () => {
               )
             )}
             {raw instanceof RegistryError ? (
-              <ErrorMessage title="Failed to get raw file" body={raw.message} />
+              <ErrorMessage title="Haqiqiy fayl topilmadi" body={raw.message} />
             ) : (
               raw && (
                 <div className="mt-4">
@@ -446,7 +446,7 @@ function DirectoryListing(props: {
             </div>
             {props.repositoryURL && (
               <a href={props.repositoryURL} className="link ml-4">
-                Repository
+                Repozitoriya
               </a>
             )}
           </div>
