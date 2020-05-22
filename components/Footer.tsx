@@ -63,7 +63,6 @@ const Footer = (props: { simple?: boolean }) => (
         <a
           href="https://youtube.com/iblogsuz"
           className="ml-6 text-gray-400 hover:text-gray-500"
-          target="_blank"
         >
           <span className="sr-only">YouTube</span>
           <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -81,7 +80,7 @@ const Footer = (props: { simple?: boolean }) => (
         </a>
       </div>
       <div className="mt-6 flex justify-center flex-wrap">
-        <a href="https://github.com/denoland/deno" target="_blank">
+        <a href="https://github.com/denoland/deno">
           <img
             className="m-2 opacity-75"
             alt="denoland/deno CI"
