@@ -18,7 +18,7 @@ const V1Hoodie = () => {
         {metaDescription({
           title: "Deno 1.0 Hoodie",
           description:
-            "A limited edition, premium quality Deno 1.0 hoodie that you can order to help support the Deno project.",
+            "Sanoqli, Sifatli Deno 1.0 hoodie buyurtma qiling va bizni qo'llab quvvatlang.",
           url: "https://deno.land/v1/hoodie",
           image: "https://deno.land/v1_wide.jpg",
         })}
@@ -29,7 +29,7 @@ const V1Hoodie = () => {
           Deno 1.0 Hoodie
         </h1>
         <p className="text-gray-500 mt-3 leading-tight">
-          Limited Time, Premium Quality
+          Sanoqli, Sifatli
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
           <div>
@@ -37,25 +37,25 @@ const V1Hoodie = () => {
           </div>
           <div>
             <p className="text-gray-900">
-              Help support the Deno project by pre-ordering a limited time,
-              special edition Deno v1.0 hoodie. This black zip-up hoodie
-              features the v1.0 artwork by the famed Tokyo-based hacker/artist{" "}
+
+              Deno v1.0 maxsus hoodie uchun cheklangan vaqtni oldindan buyurtma
+              qilish orqali Deno loyihasini qo'llab-quvvatlashga yordam bering.
+              Ushbu qora zip-up xoodi taniqli Tokiolik xaker va rassom{" "}
               <a className="link" href="https://github.com/hashrock">
-                hashrock
-              </a>
-              .
+                hashrockning
+              </a>{" "}
+              v1.0 rasmlarini namoyish etadi.
             </p>
             <p className="text-gray-900 mt-4">
-              To be clear: this is a pre-order. We have not yet had these
-              manufactured. The image above is a photoshopped mock-up. We will
-              be taking orders until May 21st, after which this limited edition
-              hoodie will never again be sold. We expect to ship these out in
-              July.
+              Aniq bo'lish uchun: bu oldindan buyurtma. Bizda bunday mahsulotlar
+              hali mavjud emas. Yuqoridagi rasm fotoshoplangan masxara. Biz 21-mayga
+              qadar buyurtma olamiz, shundan so'ng cheklangan nashr qilingan kaput
+              endi sotilmaydi. Biz ularni iyulda etkazib berishni kutmoqdamiz.
             </p>
             <p className="text-gray-900 font-bold text-2xl leading-tight mt-4">
               $100
             </p>
-            <p className="text-gray-500 mt-1 leading-tight">$15 shipping</p>
+            <p className="text-gray-500 mt-1 leading-tight">$15 yuk</p>
             <form
               action="https://www.paypal.com/cgi-bin/webscr"
               method="post"
@@ -72,7 +72,7 @@ const V1Hoodie = () => {
 
               <div className="mt-4 w-full">
                 <label htmlFor="size" className="text-sm">
-                  Size
+                  Hajm
                 </label>
                 <div className="mt-1">
                   <div className="rounded-md shadow-sm">
@@ -102,20 +102,20 @@ const V1Hoodie = () => {
                     type="submit"
                     className="flex w-full justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out"
                   >
-                    Purchase with PayPal
+                    PayPal orqali sotib oling
                   </button>
                 </span>
               </div>
               <div className="mt-6">
-                <h4 className="text-gray-500">Size chart (in inches)</h4>
+                <h4 className="text-gray-500">O'lchovlar jadvali (dyuymda)</h4>
                 {/* Gildan Heavy Blend Adult Full Zip Hooded Sweatshirt 18600 */}
                 <table className="table-auto mt-1 overflow-x-auto w-full rounded">
                   <thead>
                     <tr>
-                      <th className="border px-4 py-2">Size</th>
-                      <th className="border px-4 py-2">Width</th>
-                      <th className="border px-4 py-2">Length</th>
-                      <th className="border px-4 py-2">Sleeve Center Back</th>
+                      <th className="border px-4 py-2">Hajmi</th>
+                      <th className="border px-4 py-2">Kengligi</th>
+                      <th className="border px-4 py-2">Uzunligi</th>
+                      <th className="border px-4 py-2">Orqa hajm</th>
                     </tr>
                   </thead>
                   <tbody>

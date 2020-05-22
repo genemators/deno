@@ -96,7 +96,7 @@ const Footer = (props: { simple?: boolean }) => (
             src="https://img.shields.io/github/workflow/status/denoland/rusty_v8/ci/master?label=rusty_v8&logo=github"
           />
         </a>
-        <a href="https://github.com/denoland/deno_website2">
+        <a href="https://github.com/genemators/deno">
           <img
             className="m-2 opacity-75"
             alt="denoland/deno_website2 CI"
