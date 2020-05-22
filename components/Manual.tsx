@@ -133,7 +133,7 @@ function Manual() {
       .then((res) => {
         if (res.status !== 200) {
           throw Error(
-            `Got an error (${res.status}) while getting the documentation file.`
+            `Qo'llanma fayllarini yuklash paytida ${res.status} xatoligi yuz berdi.`
           );
         }
         return res.text();
@@ -142,7 +142,7 @@ function Manual() {
       .catch((e) => {
         console.error("Failed to fetch content:", e);
         setContent(
-          "# 404 - Not Found\nWhoops, the page does not seem to exist."
+          "# 404 - Topilmadi\nKechirasiz, sahifa mavjud emasga o'xshaydi."
         );
       });
   }, [sourceURL]);
@@ -207,7 +207,7 @@ function Manual() {
                   <div className="absolute top-0 right-0 -mr-14 p-1">
                     <button
                       className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
-                      aria-label="Close sidebar"
+                      aria-label="Menyuni yopish"
                       onClick={hideSidebar}
                     >
                       <svg
@@ -431,7 +431,7 @@ function Version({
   return (
     <div className="mt-5 px-4">
       <label htmlFor="version" className="sr-only">
-        Version
+        Versiya
       </label>
       <div className="mt-1 sm:mt-0 sm:col-span-2">
         <div className="max-w-xs rounded-md shadow-sm">
