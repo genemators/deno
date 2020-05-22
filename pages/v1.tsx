@@ -63,11 +63,10 @@ const V1 = (props: Props) => {
         </div>
         <div className="py-32 text-gray-900">
           <h2 className="text-2xl tracking-tight leading-tight font-bold border-b border-gray-200 mt-12 mb-6 pb-1">
-            One last thing
+            So'nggi iltimos:
           </h2>
           <p>
-            Consider supporting this open source software work by pre-ordering a
-            Deno v1.0 hoodie:
+            Bizning yordamchi dasturimizni Deno v1.0 hoodie olish yordamida qo'llab quvvatlashni o'ylab ko'ring:
           </p>
           <img
             src="/v1_hoodie_mock.png"
@@ -77,7 +76,7 @@ const V1 = (props: Props) => {
           <span className="block rounded-md shadow-sm">
             <Link href="/v1/hoodie">
               <a className="flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out">
-                Order here &rarr;
+                Shu yerda buyurtma bering &rarr;
               </a>
             </Link>
           </span>
