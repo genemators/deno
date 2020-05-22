@@ -71,9 +71,8 @@ const Footer = (props: { simple?: boolean }) => (
           </svg>
         </a>
         <a
-          href="https://t.me/denoland_uz"
+          href="tg://resolve?domain=denoland_uz"
           className="ml-6 text-gray-400 hover:text-gray-500"
-          target="_blank"
         >
           <span className="sr-only">Telegam</span>
           <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
