@@ -45,7 +45,7 @@ const ThirdPartyRegistryList = () => {
           <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 pt-4">
             <div className="text-gray-900 mt-4 sm:mt-8 break-words">
               <p>
-                <span className="font-semibold">deno.uz/x</span> bu
+                <span className="font-semibold">deno.land/x</span> bu
                 o'zgaruvchan Deno scriptlari uchun yaratilgan URL servis. Odatiy
                 URL formati bu{" "}
                 <InlineCode>
