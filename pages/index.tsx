@@ -100,9 +100,9 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
               Deno
             </h1>
             <h2 className="mt-4 sm:mt-5 font-light text-2xl text-center leading-tight text-gray-900">
-              Bu <strong className="font-semibold">JavaScript</strong> va{" "}
-              <strong className="font-semibold">TypeScript</strong> uchun
-              yaratilgan <strong className="font-semibold">xavfsiz</strong>{" "}
+              <strong className="font-semibold">JavaScript</strong> va{" "}
+              <strong className="font-semibold">TypeScript</strong> ishga
+              tushuruvchi <strong className="font-semibold">xavfsiz</strong>{" "}
               yordamchi dastur.
             </h2>
           </div>
