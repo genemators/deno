@@ -19,8 +19,8 @@ const V1Hoodie = () => {
           title: "Deno 1.0 Hoodie",
           description:
             "Sanoqli, Sifatli Deno 1.0 hoodie buyurtma qiling va bizni qo'llab quvvatlang.",
-          url: "https://deno.land/v1/hoodie",
-          image: "https://deno.land/v1_wide.jpg",
+          url: "https://deno.uz/v1/hoodie",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <Header />

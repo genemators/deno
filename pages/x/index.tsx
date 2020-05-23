@@ -35,8 +35,8 @@ const ThirdPartyRegistryList = () => {
         {metaDescription({
           title: "Deno Uchinchi Darajali Modullari",
           description: "Deno uchun yaratilgan Uchinchi Darajali Modullar.",
-          url: "https://deno.land/x",
-          image: "https://deno.land/v1_wide.jpg",
+          url: "https://deno.uz/x",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <div className="bg-gray-50 min-h-full">
