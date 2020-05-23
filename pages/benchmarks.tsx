@@ -51,8 +51,8 @@ const Benchmarks = () => {
         {metaDescription({
           title: "Benchmarks - Deno",
           description: "Continuous benchmarks for Deno.",
-          url: "https://deno.land/benchmarks",
-          image: "https://deno.land/v1_wide.jpg",
+          url: "https://deno.uz/benchmarks",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <div className="bg-gray-50 min-h-full">

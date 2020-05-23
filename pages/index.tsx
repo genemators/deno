@@ -24,7 +24,7 @@ export const metaDescription = ({
   title,
   description,
   image,
-  url = "https://deno.land/",
+  url = "https://deno.uz/",
 }: {
   title: string;
   description: string;
@@ -73,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             "Deno — JavaScript va TypeScript ishga tushuruvchi xavfsiz yordamchi dastur.",
           description:
             "Deno bu sodda, zamonaviy va xafvsiz JavaScript va TypeScript ishga tushuruvchi dastur. Deno V8 yordamchi dasturi va Rust dasturlash tillarini ishlatadi.",
-          image: "https://deno.land/v1_wide.jpg",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <div className="bg-white">
