@@ -171,12 +171,12 @@ function Manual() {
   return (
     <div>
       <Head>
-        <title>The Deno Manual</title>
+        <title>Deno Qo'llanmasi</title>
         {metaDescription({
           title: "Deno Qo'llanmasi",
           description: partialContent || "Deno Qo'llanmasi",
-          url: "https://deno.land/manual",
-          image: "https://deno.land/v1_wide.jpg",
+          url: "https://deno.uz/manual",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <div className="h-screen flex overflow-hidden">

@@ -171,20 +171,20 @@ const Registry = () => {
       <Head>
         <title>
           {name}
-          {version && `@${version}`} - deno.land{!isStd ? "/x" : ""}
+          {version && `@${version}`} - deno.uz{!isStd ? "/x" : ""}
         </title>
         {metaDescription({
-          title: `deno.land${!isStd ? "/x" : ""}/${name}${
+          title: `deno.uz${!isStd ? "/x" : ""}/${name}${
             version && `@${version}`
           }`,
           description:
             name === "std"
               ? "Deno Standart Moduli."
               : "Deno uchun yaratilgan Uchinchi Darajali Modul.",
-          url: `https://deno.land${!isStd ? "/x" : ""}/${name}${
+          url: `https://deno.uz${!isStd ? "/x" : ""}/${name}${
             version && `@${version}`
           }`,
-          image: "https://deno.land/v1_wide.jpg",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <div className="bg-gray-50 min-h-full">

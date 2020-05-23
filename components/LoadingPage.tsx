@@ -12,7 +12,7 @@ function LoadingPage() {
           description:
             "Deno - bu JavaScript va TypeScript dasturlash tillarida yozilgan dasturlani " +
             "ishga tushuruvchi xavfsiz yordamchi dastur!",
-          image: "https://deno.land/v1_wide.jpg",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <div className="bg-gray-50 min-h-full" />
