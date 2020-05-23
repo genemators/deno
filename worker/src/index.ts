@@ -2,6 +2,7 @@
 
 import { handleRequest } from "./handler";
 
+// @ts-ignore
 addEventListener("fetch", (event: FetchEvent) => {
   event.respondWith(handleRequest(event.request));
 });

@@ -49,7 +49,7 @@ const ThirdPartyRegistryList = () => {
                 o'zgaruvchan Deno scriptlari uchun yaratilgan URL servis. Odatiy
                 URL formati bu{" "}
                 <InlineCode>
-                  https://deno.uz/x/MODULE_NAME@BRANCH/SCRIPT.ts
+                  https://deno.land/x/MODULE_NAME@BRANCH/SCRIPT.ts
                 </InlineCode>
                 . Agar branch qismini ko'rsatmasangiz, servis shu modulning
                 doimiy branch URL ini tanlab oladi, odatda bu{" "}

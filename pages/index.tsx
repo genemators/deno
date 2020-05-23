@@ -44,7 +44,7 @@ export const metaDescription = ({
 const NUM_THIRD_PARTY = 12;
 
 const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
-  const complexExampleProgram = `import { serve } from "https://deno.uz/std@${latestStd}/http/server.ts";
+  const complexExampleProgram = `import { serve } from "https://deno.land/std@${latestStd}/http/server.ts";
   const s = serve({ port: 8000 });
   console.log("http://localhost:8000/");
   for await (const req of s) {
@@ -156,7 +156,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             Keling, oddiy dastur ishga tushurishga harakat qilamiz:
           </p>
           <CodeBlock
-            code="deno run https://deno.uz/std/examples/welcome.ts"
+            code="deno run https://deno.land/std/examples/welcome.ts"
             language="bash"
           />
           <p className="my-4 text-gray-700">Yoki yanada qiyinroq misol:</p>
@@ -321,7 +321,7 @@ const InstallSection = () => {
       <p className="py-2">Shell (Mac, Linux):</p>
       <CodeBlock
         language="bash"
-        code={`curl -fsSL https://deno.uz/x/install/install.sh | sh`}
+        code={`curl -fsSL https://deno.land/x/install/install.sh | sh`}
       />
     </div>
   );
@@ -341,7 +341,7 @@ const InstallSection = () => {
       <p className="mb-2">PowerShell (Windows):</p>
       <CodeBlock
         language="bash"
-        code={`iwr https://deno.uz/x/install/install.ps1 -useb | iex`}
+        code={`iwr https://deno.land/x/install/install.ps1 -useb | iex`}
       />
     </div>
   );
