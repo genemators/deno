@@ -24,8 +24,8 @@ const V1 = (props: Props) => {
         {metaDescription({
           title: "Deno 1.0",
           description: "Deno, a secure runtime for JavaScript and TypeScript.",
-          url: "https://deno.land/v1/",
-          image: "https://deno.land/v1_wide.jpg",
+          url: "https://deno.uz/v1/",
+          image: "https://deno.uz/v1_wide.jpg",
         })}
       </Head>
       <Header />
