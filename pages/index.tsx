@@ -128,7 +128,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             <li>
               Ichida ko'rib chiqilgan va Deno bilan ishlashi anniq bo'lgan
               standart modullar mavjud:{" "}
-              <a href="https://deno.land/std" className="link">
+              <a href="/std" className="link">
                 deno.land/std
               </a>
             </li>
