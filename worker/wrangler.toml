@@ -13,11 +13,11 @@ workers_dev = true
 # environment configuration
 [env.staging]
 name = "worker-staging"
-route = "staging.deno.land/*"
+route = "staging.deno.uz/*"
 workers_dev = false
 
 # environment configuration
 [env.production]
 name = "worker"
-route = "deno.land/*"
+route = "deno.uz/*"
 workers_dev = false

@@ -4,7 +4,7 @@ import { handleRegistryRequest } from "./registry";
 
 const REMOTE_URL = "https://deno-website2.now.sh";
 const TYPEDOC_REMOTE_URL =
-  "http://deno.land.s3-website-us-east-1.amazonaws.com";
+  "http://deno.uz.s3-website-us-east-1.amazonaws.com";
 
 export async function handleRequest(request: Request) {
   const accept = request.headers.get("accept");

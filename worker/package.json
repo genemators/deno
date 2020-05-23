@@ -1,7 +1,7 @@
 {
   "name": "worker",
   "version": "1.0.0",
-  "description": "Cloudflare worker for deno.land",
+  "description": "Cloudflare worker for deno.uz",
   "license": "MIT",
   "scripts": {
     "build": "webpack",

@@ -52,7 +52,7 @@ const Registry = () => {
   const defaultVersion = useMemo(() => entry?.getDefaultVersion(), [entry]);
 
   const documentationURL = useMemo(() => {
-    const doc = `https://doc.deno.land/https/deno.land/${canonicalPath}`;
+    const doc = `https://doc.deno.land/https/deno.uz/${canonicalPath}`;
     return denoDocAvailableForURL(canonicalPath) ? doc : null;
   }, [canonicalPath]);
 
@@ -331,7 +331,7 @@ function Breadcrumbs({
   return (
     <p className="text-gray-500 pt-2 pb-4">
       <Link href="/">
-        <a className="link">deno.land</a>
+        <a className="link">deno.uz</a>
       </Link>{" "}
       /{" "}
       {!isStd && (

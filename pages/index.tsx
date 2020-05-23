@@ -44,7 +44,7 @@ export const metaDescription = ({
 const NUM_THIRD_PARTY = 12;
 
 const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
-  const complexExampleProgram = `import { serve } from "https://deno.land/std@${latestStd}/http/server.ts";
+  const complexExampleProgram = `import { serve } from "https://deno.uz/std@${latestStd}/http/server.ts";
   const s = serve({ port: 8000 });
   console.log("http://localhost:8000/");
   for await (const req of s) {
@@ -129,7 +129,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
               Ichida ko'rib chiqilgan va Deno bilan ishlashi anniq bo'lgan
               standart modullar mavjud:{" "}
               <a href="/std" className="link">
-                deno.land/std
+                deno.uz/std
               </a>
             </li>
           </ol>
@@ -156,7 +156,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             Keling, oddiy dastur ishga tushurishga harakat qilamiz:
           </p>
           <CodeBlock
-            code="deno run https://deno.land/std/examples/welcome.ts"
+            code="deno run https://deno.uz/std/examples/welcome.ts"
             language="bash"
           />
           <p className="my-4 text-gray-700">Yoki yanada qiyinroq misol:</p>
@@ -235,7 +235,7 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
           <p className="my-4 text-gray-700">
             Shu standart modullar{" "}
             <Link href="/[identifier]" as="/std">
-              <a className="link">deno.land/std</a>
+              <a className="link">deno.uz/std</a>
             </Link>{" "}
             da joylashtirilgan va bu modullarga EcmaScript modul ko'rsatish
             usuli yordamida Deno dasturlash jarayonida ishlatish mumkin.
@@ -276,14 +276,14 @@ const Home: NextPage<HomeProps> = ({ thirdPartyEntries, latestStd }) => {
             Hattoki, Deno, EcmaScript modullar uchun sodda hosting servislari
             taqdim etadi va Deno dasturlash jarayonida ishlatiladi. Bu servisni{" "}
             <Link href="/x">
-              <a className="link">deno.land/x</a>
+              <a className="link">deno.uz/x</a>
             </Link>{" "}
             sahifasidan topishingiz mumkin.
           </p>
           <p className="my-4 text-gray-700">
             Quyida hozirgi vaqtda{" "}
             <Link href="/x">
-              <a className="link">deno.land/x</a>
+              <a className="link">deno.uz/x</a>
             </Link>{" "}
             sahifasida mavjud bo'lgan tasodifiy modullar ro'yxatini ko'rishingiz
             mumkin:
@@ -321,7 +321,7 @@ const InstallSection = () => {
       <p className="py-2">Shell (Mac, Linux):</p>
       <CodeBlock
         language="bash"
-        code={`curl -fsSL https://deno.land/x/install/install.sh | sh`}
+        code={`curl -fsSL https://deno.uz/x/install/install.sh | sh`}
       />
     </div>
   );
@@ -341,7 +341,7 @@ const InstallSection = () => {
       <p className="mb-2">PowerShell (Windows):</p>
       <CodeBlock
         language="bash"
-        code={`iwr https://deno.land/x/install/install.ps1 -useb | iex`}
+        code={`iwr https://deno.uz/x/install/install.ps1 -useb | iex`}
       />
     </div>
   );

@@ -11,7 +11,7 @@ beforeAll(() => {
 
 describe("worker proxying", () => {
   test("/ responds with React html", async () => {
-    const result = await handleRequest(new Request("https://deno.land/"));
+    const result = await handleRequest(new Request("https://deno.uz/"));
     expect(result.headers.get("Content-Type")).toContain("text/html");
     const text = await result.text();
     expect(text).toContain('Deno');
@@ -26,7 +26,7 @@ describe("worker proxying", () => {
 
   it("/typedoc/ responds with typedoc", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/typedoc/")
+      new Request("https://deno.uz/typedoc/")
     );
     expect(result.headers.get("Content-Type")).toContain("text/html");
     const text = await result.text();
@@ -35,7 +35,7 @@ describe("worker proxying", () => {
 
   it("/std/version.ts with Accept: 'text/html' responds with React html", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/std/version.ts", {
+      new Request("https://deno.uz/std/version.ts", {
         headers: { Accept: "text/html" },
       })
     );
@@ -46,7 +46,7 @@ describe("worker proxying", () => {
 
   it("/std/http/server.ts had x-deno-warning", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/std/http/server.ts")
+      new Request("https://deno.uz/std/http/server.ts")
     );
     expect(result.headers.get("Content-Type")).toContain(
       "application/typescript"
@@ -61,7 +61,7 @@ describe("worker proxying", () => {
 
   it("/x/std/version.ts with Accept: 'text/html' responds with React html", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/x/std/version.ts", {
+      new Request("https://deno.uz/x/std/version.ts", {
         headers: { Accept: "text/html" },
       })
     );
@@ -72,7 +72,7 @@ describe("worker proxying", () => {
 
   it("/x/std/version.ts with no Accept responds with raw markdown", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/x/std/version.ts")
+      new Request("https://deno.uz/x/std/version.ts")
     );
     expect(result.headers.get("Content-Type")).toContain(
       "application/typescript"
@@ -83,7 +83,7 @@ describe("worker proxying", () => {
 
   it("/std@v0.50.0/version.ts with Accept: 'text/html' responds with React html", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/std@v0.50.0/version.ts", {
+      new Request("https://deno.uz/std@v0.50.0/version.ts", {
         headers: { Accept: "text/html" },
       })
     );
@@ -96,7 +96,7 @@ describe("worker proxying", () => {
 
   it("/std@v0.50.0/version.ts with no Accept responds with raw markdown", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/std@v0.50.0/version.ts")
+      new Request("https://deno.uz/std@v0.50.0/version.ts")
     );
     expect(result.headers.get("Content-Type")).toContain(
       "application/typescript"
@@ -107,7 +107,7 @@ describe("worker proxying", () => {
 
   it("/x/std@0.50.0/version.ts with Accept: 'text/html' responds with React html", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/x/std@0.50.0/version.ts", {
+      new Request("https://deno.uz/x/std@0.50.0/version.ts", {
         headers: { Accept: "text/html" },
       })
     );
@@ -118,7 +118,7 @@ describe("worker proxying", () => {
 
   it("/x/std@v0.50.0/version.ts with no Accept responds with raw markdown", async () => {
     const result = await handleRequest(
-      new Request("https://deno.land/x/std@v0.50.0/version.ts")
+      new Request("https://deno.uz/x/std@v0.50.0/version.ts")
     );
     expect(result.headers.get("Content-Type")).toContain(
       "application/typescript"

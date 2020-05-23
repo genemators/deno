@@ -552,7 +552,7 @@
     "type": "github",
     "owner": "etopiei",
     "repo": "deno_search",
-    "desc": "A CLI tool to search for third party packages on deno.land"
+    "desc": "A CLI tool to search for third party packages on deno.uz"
   },
   "deno_structured_logging": {
     "type": "github",
@@ -2187,7 +2187,7 @@
     "type": "github",
     "owner": "lucascaro",
     "repo": "deno-uuid",
-    "desc": "Warning: the library code of this module has been moved to https://deno.land/std/testing/mod.ts."
+    "desc": "Warning: the library code of this module has been moved to https://deno.uz/std/testing/mod.ts."
   },
   "uwuifier": {
     "type": "github",
@@ -2285,7 +2285,7 @@
     "type": "github",
     "owner": "denorg",
     "repo": "x-name",
-    "desc": "Check if a package name is available in deno.land/x"
+    "desc": "Check if a package name is available in deno.uz/x"
   },
   "xchacha20": {
     "type": "github",
