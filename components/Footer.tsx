@@ -61,7 +61,7 @@ const Footer = (props: { simple?: boolean }) => (
           </svg>
         </a>
         <a
-          href="tg://resolve?domain=denoland_bot"
+          href="https://t.me/denoland_bot"
           className="ml-6 text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">Assistant</span>
@@ -70,7 +70,7 @@ const Footer = (props: { simple?: boolean }) => (
           </svg>
         </a>
         <a
-          href="tg://resolve?domain=denoland_uz"
+          href="https://t.me/denoland_uz"
           className="ml-6 text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">Telegam</span>

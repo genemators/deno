@@ -75,7 +75,7 @@ const Header = ({ subtitle }: { subtitle?: string }) => {
             </a>
           </Link>
           <a
-            href="tg://resolve?domain=denoland_bot"
+            href="https://t.me/denoland_bot"
             className="ml-10 text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
           >
             <span className="sr-only">Telegram</span>
