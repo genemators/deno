@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "https://reddit.deno.uz/*"
-  to = "https://www.reddit.com/r/Deno/"
-  status = 200
