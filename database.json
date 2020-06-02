@@ -11,11 +11,23 @@
     "repo": "abc",
     "desc": "A better Deno framework to create web application"
   },
+  "accepts": {
+    "type": "github",
+    "owner": "ako-deno",
+    "repo": "accepts",
+    "desc": "Higher level content negotiation for Deno."
+  },
   "actdb": {
     "type": "github",
     "owner": "searchableguy",
     "repo": "actdb",
-    "desc": "A simple nosql reactive db or database."
+    "desc": "A simple nosql reactive db or database 🐈."
+  },
+  "adka": {
+    "type": "github",
+    "owner": "apiel",
+    "repo": "adka",
+    "desc": "Static site generator using JSX without React."
   },
   "airtable": {
     "type": "github",
@@ -34,6 +46,18 @@
     "owner": "lenkan",
     "repo": "deno-amqp",
     "desc": "AMQP 0.9.1"
+  },
+  "api": {
+    "type": "github",
+    "owner": "maheshkareeya",
+    "repo": "api",
+    "desc": "Promise based HTTP client for the Deno. ༼ つ ◕_◕ ༽つ"
+  },
+  "appwrite": {
+    "type": "github",
+    "owner": "appwrite",
+    "repo": "sdk-for-deno",
+    "desc": "Official Deno SDK for the Appwrite open-source backend server 🚀"
   },
   "aqua": {
     "type": "github",
@@ -60,11 +84,29 @@
     "repo": "framework",
     "desc": "The next-generation type-safe web framework."
   },
+  "arrays": {
+    "type": "github",
+    "owner": "damianperera",
+    "repo": "ts-arrays",
+    "desc": "Provides support for common Array operations."
+  },
+  "ascii_table": {
+    "type": "github",
+    "owner": "eeve",
+    "repo": "ascii_table",
+    "desc": "Quickly format table in ASCII."
+  },
   "ask": {
     "type": "github",
     "owner": "jozsefsallai",
     "repo": "ask",
     "desc": "Interactive command-line prompts for Deno."
+  },
+  "async_ray": {
+    "type": "github",
+    "owner": "rpgeeganage",
+    "repo": "async-ray-deno",
+    "desc": "Provide async/await callbacks for Array methods."
   },
   "attain": {
     "type": "github",
@@ -72,11 +114,41 @@
     "repo": "attain",
     "desc": "A middleware web framework, inspired by express.js"
   },
+  "attain_graphql": {
+    "type": "github",
+    "owner": "aaronwlee",
+    "repo": "attain-graphql",
+    "desc": "A simple graphql middleware for Attain framework."
+  },
+  "audit": {
+    "type": "github",
+    "owner": "maximousblk",
+    "repo": "audit",
+    "desc": "Add an audit notification for insecure versions of your modules"
+  },
+  "auto_bind": {
+    "type": "github",
+    "owner": "jgchk",
+    "repo": "auto-bind",
+    "desc": "Automatically bind methods to their class instance"
+  },
+  "autopilot": {
+    "type": "github",
+    "owner": "divy-work",
+    "repo": "autopilot-deno",
+    "desc": "A cross-platform desktop automation library"
+  },
   "await_mutex": {
     "type": "github",
     "owner": "Matthew-Smith",
     "repo": "awaitable_mutex",
     "desc": "Blocking execution of a section of code to one at a time"
+  },
+  "axiod": {
+    "type": "github",
+    "owner": "roonie007",
+    "repo": "axiod",
+    "desc": "Promise based HTTP client for Deno inpired by axios"
   },
   "azure_functions": {
     "type": "github",
@@ -120,6 +192,12 @@
     "repo": "bigfloat-deno",
     "desc": "A library for arbitrary precision decimal floating point arithmetic that can exactly represent all decimal fractions, unlike JavaScript's number data type which is 64-bit binary floating point."
   },
+  "binary": {
+    "type": "github",
+    "owner": "bqio",
+    "repo": "binary",
+    "desc": "Binary library for Deno."
+  },
   "blake2b": {
     "type": "github",
     "owner": "chiefbiiko",
@@ -137,6 +215,18 @@
     "owner": "paulmillr",
     "repo": "noble-bls12-381",
     "desc": "bls12-381, a pairing-friendly elliptic curve construction."
+  },
+  "boolbase": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "boolbase",
+    "desc": "BoolBase, only two functions: one that returns true, one that returns false."
+  },
+  "brotli": {
+    "type": "github",
+    "owner": "denosaurs",
+    "repo": "deno_brotli",
+    "desc": "A brotli compression and decompression module implemented in WASM"
   },
   "bsv": {
     "type": "github",
@@ -174,6 +264,18 @@
     "repo": "bzfquery.js",
     "desc": "JavaScript/TypeScript version of bzfquery for Deno"
   },
+  "caller": {
+    "type": "github",
+    "owner": "apiel",
+    "repo": "caller",
+    "desc": "Return the filepath of the parent function."
+  },
+  "carol": {
+    "type": "github",
+    "owner": "uki00a",
+    "repo": "carol",
+    "desc": "Build cross-platform desktop apps with Deno and HTML."
+  },
   "case": {
     "type": "github",
     "owner": "justjavac",
@@ -186,6 +288,12 @@
     "repo": "deno_case_style",
     "desc": "A string validator and formater for case Style"
   },
+  "casualdb": {
+    "type": "github",
+    "owner": "campvanilla",
+    "repo": "casualdb",
+    "desc": "Simple JSON database for Deno with type-safety. Inspired by lowdb, with a mongoose-like API."
+  },
   "cat_you": {
     "type": "github",
     "owner": "SuperC03",
@@ -197,6 +305,12 @@
     "owner": "rsp",
     "repo": "deno-caught",
     "desc": "This module lets you attach empty rejection handlers to promises to avoid errors when we want to handle rejections asynchronously."
+  },
+  "census": {
+    "type": "github",
+    "owner": "being-curious",
+    "repo": "census",
+    "desc": "Count modules in https://deno.land/x."
   },
   "chacha20": {
     "type": "github",
@@ -258,11 +372,23 @@
     "repo": "cmd",
     "desc": "Commander.js (command-line interfaces) for Deno."
   },
+  "cobalt": {
+    "type": "github",
+    "owner": "CIDARO",
+    "repo": "cobalt",
+    "desc": "Simple but awesome LRU cache for Deno, named after the bluest color."
+  },
   "collections": {
     "type": "github",
     "owner": "hayd",
     "repo": "deno-collections",
     "desc": "A utility to handle collections"
+  },
+  "color": {
+    "type": "github",
+    "owner": "maheshkareeya",
+    "repo": "color",
+    "desc": "Write Colourful Messages In console. It's easy to learn and use. ༼ つ ◕_◕ ༽つ"
   },
   "colors": {
     "type": "github",
@@ -270,11 +396,23 @@
     "repo": "colors",
     "desc": "Material Design Colors ༼ つ ◕_◕ ༽つ"
   },
+  "commands": {
+    "type": "github",
+    "owner": "buttercubz",
+    "repo": "Commands",
+    "desc": "Create commands shortcuts for Deno"
+  },
   "compose": {
     "type": "github",
     "owner": "KSXGitHub",
     "repo": "deno-compose",
     "desc": "pipe, pipeline, and compose functions with 64 overloads per function"
+  },
+  "computed_types": {
+    "type": "github",
+    "owner": "neuledge",
+    "repo": "computed-types",
+    "desc": "🦩 Joi like validation for TypeScript"
   },
   "conf": {
     "type": "github",
@@ -299,6 +437,18 @@
     "owner": "code-hex",
     "repo": "deno-context",
     "desc": "🦕 Propagate deadlines, a cancellation and other request-scoped values to multiple promise. The behaviour is like Go's context"
+  },
+  "convertTime": {
+    "type": "github",
+    "owner": "guptamohit004",
+    "repo": "convert_time",
+    "desc": "Convert Time from one Timezone to Another based on User's Location using DENO. Useful when a particular time is to be shown for a user from Different Country."
+  },
+  "cordeno": {
+    "type": "github",
+    "owner": "cordeno",
+    "repo": "cordeno",
+    "desc": "A Discord API wrapper for developing discord bots using the Deno runtime."
   },
   "core": {
     "type": "github",
@@ -336,17 +486,41 @@
     "repo": "cowsay",
     "desc": "Configurable talking cow for Deno"
   },
+  "create_deno_plugin": {
+    "type": "github",
+    "owner": "chiefbiiko",
+    "repo": "create-deno-plugin",
+    "desc": "Scaffolding for deno native plugins"
+  },
   "cron": {
     "type": "github",
     "owner": "wrzonki",
     "repo": "deno-cron",
     "desc": "Simple cron scheduler for Deno"
   },
+  "crontab": {
+    "type": "github",
+    "owner": "jchen1",
+    "repo": "crontab-deno",
+    "desc": "cron-based job runner for deno"
+  },
+  "crony": {
+    "type": "github",
+    "owner": "uchm4n",
+    "repo": "crony",
+    "desc": "Manage all your cron jobs in one file"
+  },
   "cross_env": {
     "type": "github",
     "owner": "axetroy",
     "repo": "deno_cross_env",
     "desc": "A tool for setting environment variables across platforms"
+  },
+  "csp": {
+    "type": "github",
+    "owner": "CreatCodeBuild",
+    "repo": "csp",
+    "desc": "A CSP implementation that works in Browser, Node and Deno that has 0 dependencies. Provide Channel and select function."
   },
   "csv": {
     "type": "github",
@@ -359,6 +533,12 @@
     "owner": "grantcarthew",
     "repo": "deno-cuid",
     "desc": "Collision-resistant ids optimized for horizontal scaling and performance"
+  },
+  "currency_finder": {
+    "type": "github",
+    "owner": "yeukfei02",
+    "repo": "currencyFinder",
+    "desc": "find currency information in deno"
   },
   "cursor": {
     "type": "github",
@@ -378,6 +558,12 @@
     "owner": "chiefbiiko",
     "repo": "curve25519",
     "desc": "djb's Curve25519 in TypeScript"
+  },
+  "dactyl": {
+    "type": "github",
+    "owner": "liamtan28",
+    "repo": "dactyl",
+    "desc": "Backend REST web framework for Deno, built on top of Oak"
   },
   "dash": {
     "type": "github",
@@ -409,6 +595,13 @@
     "repo": "date-fns",
     "path": "/src",
     "desc": "Modern JavaScript date utility library"
+  },
+  "datetoken": {
+    "type": "github",
+    "owner": "sonirico",
+    "repo": "datetoken.js",
+    "path": "/src",
+    "desc": "datetoken is a time toolkit for deno and typescript, with support for relative deltas and string parsing"
   },
   "dblapi.ts": {
     "type": "github",
@@ -482,23 +675,53 @@
     "repo": "deno_app_setuper",
     "desc": "A CLI to setup apps like a Create React App."
   },
-  "deno_aws_sign_v4":{
+  "deno_aws_sign_v4": {
     "type": "github",
-    "owner": "silverxu",
+    "owner": "silver-xu",
     "repo": "deno-aws-sign-v4",
     "desc": "Generates AWS Signature V4 for AWS low-level REST APIs"
-  },	
+  },
+  "deno_check_thai_pid": {
+    "type": "github",
+    "owner": "thiti-y",
+    "repo": "deno-check-thai-pid",
+    "desc": "Check thai personal ID."
+  },
   "deno_check_updates": {
     "type": "github",
     "owner": "fzwael",
     "repo": "deno-check-updates",
     "desc": "Automatically checks deno dependencies versions from import maps file."
   },
+  "deno_correiobr": {
+    "type": "github",
+    "owner": "rafaelferres",
+    "repo": "deno-correiobr",
+    "desc": "Complete module to consult information about the zip code - calculate the price and delivery times of orders and also perform their tracking"
+  },
+  "deno_cron": {
+    "type": "github",
+    "owner": "rbrahul",
+    "repo": "deno_cron",
+    "desc": "Cron Job Scheduler - to write human readable cron syntax with tons of flexibility"
+  },
   "deno_deblong": {
     "type": "github",
     "owner": "nusendra",
     "repo": "deno-deblong",
     "desc": "another simple rest api with deno"
+  },
+  "deno_dinvishesh": {
+    "type": "github",
+    "owner": "vinodnimbalkar",
+    "repo": "deno-dinvishesh",
+    "desc": "A simple deno module which returns marathi dinvishesh"
+  },
+  "deno_dotenv": {
+    "type": "github",
+    "owner": "PodaruDragos",
+    "repo": "deno_dotenv",
+    "desc": "dotenv for Deno, with exapnd capabilities"
   },
   "deno_flatten": {
     "type": "github",
@@ -518,17 +741,47 @@
     "repo": "deno-google-protobuf",
     "desc": "Protocol Buffers - Google's data interchange format"
   },
+  "deno_graphql": {
+    "type": "github",
+    "owner": "cvng",
+    "repo": "deno_graphql",
+    "desc": "GraphQL HTTP middlewares for Deno"
+  },
   "deno_gui": {
     "type": "github",
     "owner": "fakoua",
     "repo": "deno_gui",
     "desc": "Deno Web GUI"
   },
-  "deno_hidefile":{
-	"type": "github",
+  "deno_hidefile": {
+    "type": "github",
     "owner": "rafaelferres",
     "repo": "deno-hidefile",
     "desc": "Create hidden file or folder in Deno 🦕"
+  },
+  "deno_hoarders": {
+    "type": "github",
+    "owner": "searchableguy",
+    "repo": "deno-hoarders",
+    "desc": "A simple utility to import every external deno module from deno/x/ 🚒."
+  },
+  "deno_http_router": {
+    "type": "github",
+    "owner": "yuenc",
+    "repo": "deno_http_router",
+    "desc": "deno http router"
+  },
+  "deno_http_server": {
+    "type": "github",
+    "owner": "pandres95",
+    "repo": "deno-http-server",
+    "desc": "Minimal HTTP Server for Deno"
+  },
+  "deno_imagemagick": {
+    "type": "github",
+    "owner": "leonelv",
+    "repo": "deno-imagemagick",
+    "desc": "Deno port of the WASM library for ImageMagick 🦕"
   },
   "deno_init": {
     "type": "github",
@@ -536,11 +789,47 @@
     "repo": "deno_init",
     "desc": "The executable to set up a deno project 🦕"
   },
+  "deno_lodash": {
+    "type": "github",
+    "owner": "alirealasad",
+    "repo": "deno_lodash",
+    "desc": "Lodash for the Deno via import statement"
+  },
+  "deno_log": {
+    "type": "github",
+    "owner": "rafaelferres",
+    "repo": "deno-log",
+    "desc": "Lightweight logger with an extensible configuration 🦕"
+  },
+  "deno_matrix": {
+    "type": "github",
+    "owner": "anirudhgiri",
+    "repo": "deno-matrix",
+    "desc": "🦕 Lightweight Deno Library To Handle Matrices 🦖"
+  },
+  "deno_minimist": {
+    "type": "github",
+    "owner": "FaberVitale",
+    "repo": "deno_minimist",
+    "desc": "💾 Parses command line arguments. Port & rewrite of the node library minimist"
+  },
+  "deno_notify": {
+    "type": "github",
+    "owner": "PandawanFr",
+    "repo": "deno_notify",
+    "desc": "Send desktop notifications on all platforms in Deno"
+  },
   "deno_pixabay": {
     "type": "github",
     "owner": "yeukfei02",
     "repo": "deno-pixabay",
     "desc": "search image and video from pixabay in deno"
+  },
+  "deno_riot": {
+    "type": "github",
+    "owner": "rafaelferres",
+    "repo": "deno-riot",
+    "desc": "League of legends api wrapper"
   },
   "deno_scripts": {
     "type": "github",
@@ -552,7 +841,13 @@
     "type": "github",
     "owner": "etopiei",
     "repo": "deno_search",
-    "desc": "A CLI tool to search for third party packages on deno.uz"
+    "desc": "A CLI tool to search for third party packages on deno.land"
+  },
+  "deno_string_validator": {
+    "type": "github",
+    "owner": "okwudav",
+    "repo": "deno-string-validator",
+    "desc": "String validation for Deno, inspired by Validator.js => https://github.com/validatorjs/validator.js"
   },
   "deno_structured_logging": {
     "type": "github",
@@ -565,6 +860,12 @@
     "owner": "stefanuros",
     "repo": "deno_twitter_api",
     "desc": "A module to make accessing the Twitter Developer Api easy"
+  },
+  "deno_validator": {
+    "type": "github",
+    "owner": "parasg1999",
+    "repo": "deno-validator",
+    "desc": "A String Validator for deno inspired by validator.js"
   },
   "deno_weather": {
     "type": "github",
@@ -590,6 +891,12 @@
     "repo": "deno-emacs",
     "desc": "A small cli tool to generate a tsconfig.json that allows editors to understand deno."
   },
+  "denocord": {
+    "type": "github",
+    "owner": "Denocord",
+    "repo": "Denocord",
+    "desc": "A fast, strongly typed and versatile Discord API wrapper for the Deno runtime."
+  },
   "denodate": {
     "type": "github",
     "owner": "t-heu",
@@ -607,6 +914,12 @@
     "owner": "rubiin",
     "repo": "deno-env",
     "desc": "Deno module for reading env files with added options"
+  },
+  "denof": {
+    "type": "github",
+    "owner": "r37r0m0d3l",
+    "repo": "denof",
+    "desc": "Syntactic sugar for asynchronous functions, promises, generators and synchronous functions."
   },
   "denoforge": {
     "type": "github",
@@ -633,11 +946,11 @@
     "repo": "denoliver",
     "desc": "A simple, dependency free web server for Deno"
   },
-  "denom": {
+  "denologger": {
     "type": "github",
-    "owner": "denosaurs",
-    "repo": "denom",
-    "desc": "Monitor any changes in your Deno application and automagically restart 🌟"
+    "owner": "wuperguy",
+    "repo": "denologger",
+    "desc": "An easy to use log formatter tool for Deno"
   },
   "denomander": {
     "type": "github",
@@ -653,9 +966,15 @@
   },
   "denon": {
     "type": "github",
-    "owner": "eliassjogreen",
+    "owner": "denosaurs",
     "repo": "denon",
-    "desc": "Like nodemon but made in and for deno. Also a deno style file watcher"
+    "desc": "denon is the deno replacement for nodemon providing a feature packed and easy to use experience."
+  },
+  "denosaur": {
+    "type": "github",
+    "owner": "ClementD64",
+    "repo": "denosaur",
+    "desc": "Yet another web framework"
   },
   "denotrain": {
     "type": "github",
@@ -668,6 +987,24 @@
     "owner": "silver-xu",
     "repo": "deno-trie",
     "desc": "Deno implementation of Trie for faster string searches."
+  },
+  "denotrodon": {
+    "type": "github",
+    "owner": "jabernardo",
+    "repo": "denotrodon",
+    "desc": "Bare Minimum Command-Line (CLI) Application Skeleton"
+  },
+  "denova": {
+    "type": "github",
+    "owner": "viandwi24",
+    "repo": "denova",
+    "desc": "A Typescript Framework For Deno - Framework Looks Like Laravel."
+  },
+  "denovel": {
+    "type": "github",
+    "owner": "fauzan121002",
+    "repo": "denovel",
+    "desc": "A Deno Framework for Web Artisan - Inspired by Laravel."
   },
   "denoversion": {
     "type": "github",
@@ -686,6 +1023,18 @@
     "owner": "crowlKats",
     "repo": "denv",
     "desc": "A module similar to dotEnv, but for Deno"
+  },
+  "dep": {
+    "type": "github",
+    "owner": "denodep",
+    "repo": "dep",
+    "desc": "Deno dependency management tool."
+  },
+  "deps": {
+    "type": "github",
+    "owner": "denosaurs",
+    "repo": "deps",
+    "desc": "deps.ts & dependency manager for Deno"
   },
   "descord": {
     "type": "github",
@@ -716,6 +1065,12 @@
     "owner": "denjucks",
     "repo": "dexecutor",
     "desc": "An SQL query executor that supports MySql, MariaDB, Postgres, and Sqlite"
+  },
+  "di": {
+    "type": "github",
+    "owner": "luvies",
+    "repo": "deno_di",
+    "desc": "A dependency injection (DI) (inversion of control (IoC)) module for deno."
   },
   "dinja": {
     "type": "github",
@@ -771,11 +1126,53 @@
     "repo": "docopt.js",
     "desc": "The command line option parser, that will make you smile."
   },
+  "dodecasaurus": {
+    "type": "github",
+    "owner": "mikeStr8s",
+    "repo": "dodecasaurus",
+    "desc": "Dice utility that makes generating random dice values simple and convenient."
+  },
+  "dog": {
+    "type": "github",
+    "owner": "marc2332",
+    "repo": "deno_dog",
+    "desc": "Dog API wrapper"
+  },
+  "domelementtype": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "domelementtype",
+    "desc": "All the types of dom for Deno"
+  },
+  "domhandler": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "domhandler",
+    "desc": "Dom Handler: htmlparser2's dom as a separate module for deno"
+  },
+  "domserializer": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "dom-serializer",
+    "desc": "🦕 render dom nodes for node"
+  },
   "dotenv": {
     "type": "github",
     "owner": "pietvanzoen",
     "repo": "deno-dotenv",
     "desc": "Dotenv handling for deno."
+  },
+  "download": {
+    "type": "github",
+    "owner": "deno-module",
+    "repo": "download",
+    "desc": "Deno fetch api based module to download file from a URL."
+  },
+  "dpx": {
+    "type": "github",
+    "owner": "denorg",
+    "repo": "dpx",
+    "desc": "CLI to run a Deno package without installing it (like npx for Deno)"
   },
   "drake": {
     "type": "github",
@@ -800,6 +1197,12 @@
     "owner": "manyuanrong",
     "repo": "dso",
     "desc": "dso is a simple ORM Library based on deno_mysql"
+  },
+  "due": {
+    "type": "github",
+    "owner": "lemueldls",
+    "repo": "due",
+    "desc": "A framework built for Deno, using Vue.js"
   },
   "dynamodb": {
     "type": "github",
@@ -831,6 +1234,30 @@
     "repo": "noble-ed25519",
     "desc": "ed25519, an elliptic curve that could be used for assymetric encryption and EDDSA signature scheme."
   },
+  "effector": {
+    "type": "github",
+    "owner": "zerobias",
+    "repo": "effector",
+    "desc": "The state manager ☄️"
+  },
+  "ejs_deno": {
+    "type": "github",
+    "owner": "femiruby",
+    "repo": "ejs-deno",
+    "desc": "EJS in Deno"
+  },
+  "emoji": {
+    "type": "github",
+    "owner": "s1mpson",
+    "repo": "emoji",
+    "desc": "🦕 Simple emoji support for Deno (validate, detect, trim, extract)"
+  },
+  "encodeurl": {
+    "type": "github",
+    "owner": "ako-deno",
+    "repo": "encodeurl",
+    "desc": "Encode a URL to a percent-encoded form, excluding already-encoded sequences. Build for Deno."
+  },
   "ende": {
     "type": "github",
     "owner": "rsp",
@@ -849,6 +1276,12 @@
     "repo": "ensure",
     "desc": "Ensure you are running on a minimum version of Deno, Typescript, or V8"
   },
+  "entities": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "entities",
+    "desc": "🦕 encode & decode XML/HTML entities with easy for deno"
+  },
   "enum": {
     "type": "github",
     "owner": "adrai",
@@ -860,6 +1293,12 @@
     "owner": "lemarier",
     "repo": "deno-env-paths",
     "desc": "Get paths for storing things like data, config, cache, etc"
+  },
+  "escape_html": {
+    "type": "github",
+    "owner": "ako-deno",
+    "repo": "escape_html",
+    "desc": "Escape string for use in HTML for Deno."
   },
   "escape_string_regexp": {
     "type": "github",
@@ -878,6 +1317,18 @@
     "owner": "denolibs",
     "repo": "event_emitter",
     "desc": "A NodeJS-like EventEmitter for Deno written in 100% Typescript."
+  },
+  "event_kit": {
+    "type": "github",
+    "owner": "lemarier",
+    "repo": "deno-event-kit",
+    "desc": "Simple module for implementing event subscription APIs"
+  },
+  "events": {
+    "type": "github",
+    "owner": "fuxingZhang",
+    "repo": "deno-EventEmitter",
+    "desc": "EventEmitter for deno, API is the same as Nodejs, Only one Typescript file, Have all the APIs of nodejs"
   },
   "evt": {
     "type": "github",
@@ -903,6 +1354,18 @@
     "repo": "expect",
     "desc": "A deno implementation of expect in order to write tests in a more jest like style."
   },
+  "fae": {
+    "type": "github",
+    "owner": "Jozty",
+    "repo": "fae",
+    "desc": "A functional programming module inspired from Ramda."
+  },
+  "fanfou_sdk": {
+    "type": "github",
+    "owner": "LitoMore",
+    "repo": "fanfou-sdk-deno",
+    "desc": "Fanfou SDK for Deno"
+  },
   "fastlist": {
     "type": "github",
     "owner": "MarkTiedemann",
@@ -915,11 +1378,23 @@
     "repo": "fastro-server",
     "desc": "deno fast web framework"
   },
+  "favQuote_cli": {
+    "desc": "Get favourite or random quote cli",
+    "owner": "yeukfei02",
+    "repo": "favQuote-cli",
+    "type": "github"
+  },
   "fen": {
     "type": "github",
     "owner": "fen-land",
     "repo": "deno-fen",
     "desc": "A simple web framework for deno."
+  },
+  "file_chunk": {
+    "type": "github",
+    "owner": "ClementD64",
+    "repo": "deno-file-chunk",
+    "desc": "Read a chunk of file"
   },
   "filesize": {
     "type": "github",
@@ -935,11 +1410,29 @@
     "path": "/src",
     "desc": "A tool for creating large sets of pseudo random data."
   },
+  "firebasePushID": {
+    "type": "github",
+    "owner": "ajimae",
+    "repo": "UniqueIDGenerator",
+    "desc": "A tool for generating unique database IDs."
+  },
   "fireflix": {
     "type": "github",
     "owner": "AlfieriChou",
     "repo": "deno-fireflix",
     "desc": "Summary of common functions."
+  },
+  "flowed": {
+    "type": "github",
+    "owner": "danielduarte",
+    "repo": "flowed",
+    "desc": "A fast and reliable flow manager and task runner for Node.js and web browsers"
+  },
+  "fossil": {
+    "type": "github",
+    "owner": "matteocrippa",
+    "repo": "fossil",
+    "desc": "A validation suite for type and values."
   },
   "fox": {
     "type": "github",
@@ -953,6 +1446,18 @@
     "repo": "deno_free_port",
     "desc": "get free port for Deno"
   },
+  "fs_cli": {
+    "type": "github",
+    "owner": "franckLdx",
+    "repo": "fs_cli",
+    "desc": "A deno command line tool to handle directories and files. It aims to be use in automated scripts."
+  },
+  "funky": {
+    "type": "github",
+    "owner": "ful-stackz",
+    "repo": "funky",
+    "desc": "Bring the beloved Option<T>, Result<T, E> and other functional utilities into your next Deno masterpiece!"
+  },
   "gardens": {
     "type": "github",
     "owner": "partheseas",
@@ -965,17 +1470,53 @@
     "repo": "gentleRpc",
     "desc": "JSON-RPC 2.0 TypeScript library for deno and browser."
   },
+  "geosearch": {
+    "type": "github",
+    "owner": "bartholomej",
+    "repo": "geosearch-deno",
+    "desc": "Simple CLI library to find places all around the world"
+  },
+  "get_ip": {
+    "type": "github",
+    "owner": "denorg",
+    "repo": "get-ip",
+    "desc": "Get your public IP address in Deno"
+  },
   "graphql": {
     "type": "github",
     "owner": "CreatCodeBuild",
     "repo": "graphql-projects",
     "desc": "A Deno GraphQL port"
   },
+  "graphql_abc": {
+    "type": "github",
+    "owner": "danielrearden",
+    "repo": "graphql_abc",
+    "desc": "GraphQL middleware for abc"
+  },
   "graphql_deno": {
     "type": "github",
     "owner": "adelsz",
     "repo": "graphql-deno",
     "desc": "Graphql-js ported to deno. Includes TS types and runtime."
+  },
+  "graphql_tag": {
+    "type": "github",
+    "owner": "davidmwhynot",
+    "repo": "graphql-tag-deno",
+    "desc": "graphql-tag ported to deno."
+  },
+  "graphql_ts": {
+    "type": "github",
+    "owner": "simwipado",
+    "repo": "graphql-ts",
+    "desc": "GraphQL in Typescript"
+  },
+  "graphviz": {
+    "type": "github",
+    "owner": "ts-graphviz",
+    "repo": "deno",
+    "desc": "Simple Graphviz library for Deno🦕"
   },
   "gusano": {
     "type": "github",
@@ -995,11 +1536,29 @@
     "repo": "hchacha20",
     "desc": "Special-purpose hashing, such as X25519 key derivation, or XChacha20 initialization. If in doubt, do not use."
   },
+  "hctk": {
+    "type": "github",
+    "owner": "miZyind",
+    "repo": "deno-hctk",
+    "desc": "Deno HantChar to Keyboard 漢字轉鍵盤配置"
+  },
   "heap": {
     "type": "github",
     "owner": "gobengo",
     "repo": "heap",
     "desc": "Heap data structure"
+  },
+  "hk_stock_api": {
+    "type": "github",
+    "owner": "yeukfei02",
+    "repo": "hk-stock-api",
+    "desc": "get hk stock information in deno"
+  },
+  "hk_stock_cli": {
+    "type": "github",
+    "owner": "yeukfei02",
+    "repo": "hk-stock-cli",
+    "desc": "get hk stock information cli"
   },
   "hmac": {
     "type": "github",
@@ -1013,6 +1572,12 @@
     "repo": "deno_html_entities",
     "desc": "Fast html entities decode & encode library"
   },
+  "http_errors": {
+    "type": "github",
+    "owner": "ako-deno",
+    "repo": "http_errors",
+    "desc": "Create HTTP Error for Deno."
+  },
   "http_server": {
     "type": "github",
     "owner": "SkoshRG",
@@ -1024,6 +1589,12 @@
     "owner": "lindsaykwardell",
     "repo": "http-wrapper",
     "desc": "Simple Server/Router wrapper around Deno's existing HTTP module"
+  },
+  "humanize_url": {
+    "type": "github",
+    "owner": "denorg",
+    "repo": "humanize-url",
+    "desc": "Humanize a URL in Deno https://yogi.codes → yogi.codes"
   },
   "humanizer.ts": {
     "type": "github",
@@ -1062,11 +1633,35 @@
     "repo": "i18next-locize-backend",
     "desc": "A simple i18next backend for locize.com which can be used in Node.js, in the browser and for Deno."
   },
-  "iftt": { 
-    "type": "github", 
-    "owner": "0xVesion", 
-    "repo": "deno-ifttt", 
-    "desc": "IFTTT webhook api client for deno" 
+  "i18next_mongo_backend": {
+    "type": "github",
+    "owner": "lamualfa",
+    "repo": "dn-i18next-mongo-backend",
+    "desc": "i18next mongodb backend https://www.i18next.com/ - Only for Deno 🦖"
+  },
+  "iam_policies": {
+    "type": "github",
+    "owner": "roggervalf",
+    "repo": "iam-policies",
+    "desc": "Role and Attribute based Access Control minimal lib for Deno 🦖"
+  },
+  "idea": {
+    "type": "github",
+    "owner": "notsyntax",
+    "repo": "idea",
+    "desc": "Quickly generate words/ideas in both Javascript and Typescript! 🦖"
+  },
+  "ifttt": {
+    "type": "github",
+    "owner": "0xVesion",
+    "repo": "deno-ifttt",
+    "desc": "IFTTT webhook api client for deno"
+  },
+  "imt": {
+    "type": "github",
+    "owner": "iosamuel",
+    "repo": "imt",
+    "desc": "Implementation of TMI.JS as Twitch client for Deno"
   },
   "indigobird": {
     "type": "github",
@@ -1086,6 +1681,12 @@
     "repo": "ink",
     "desc": "HTML like terminal string color for Deno"
   },
+  "input": {
+    "type": "github",
+    "owner": "keegandonley",
+    "repo": "input-deno",
+    "desc": "A utility for handling user input to a Deno command line program"
+  },
   "install": {
     "type": "github",
     "owner": "denoland",
@@ -1104,6 +1705,24 @@
     "repo": "invert-kv",
     "desc": "Invert key-value pairs in an object"
   },
+  "ip": {
+    "type": "github",
+    "owner": "damianperera",
+    "repo": "deno-ip",
+    "desc": "Detect your IP address and/or fetch geolocation data for an IP address, domain or email via ipify.org"
+  },
+  "ip_details": {
+    "type": "github",
+    "owner": "guptamohit004",
+    "repo": "ip_details",
+    "desc": " Get All information of an IP address."
+  },
+  "ipapi": {
+    "type": "github",
+    "owner": "often",
+    "repo": "ipapi",
+    "desc": "Simple ip-api.com API wrapper for Deno."
+  },
   "iro": {
     "type": "github",
     "owner": "jozsefsallai",
@@ -1121,6 +1740,12 @@
     "owner": "ako-deno",
     "repo": "isIP",
     "desc": "IP address detector for Deno."
+  },
+  "is_docker": {
+    "type": "github",
+    "owner": "denorg",
+    "repo": "is-docker",
+    "desc": "Check if the process is running inside a Docker container in Deno"
   },
   "is_exe": {
     "type": "github",
@@ -1163,6 +1788,12 @@
     "owner": "magnattic",
     "repo": "json-server",
     "desc": "Zero code fake backend for development"
+  },
+  "jsx_html": {
+    "type": "github",
+    "owner": "apiel",
+    "repo": "jsx-html",
+    "desc": "Render JSX template to HTML"
   },
   "jszip": {
     "type": "github",
@@ -1214,6 +1845,12 @@
     "path": "/lib",
     "desc": "This module is meant to provide memory-efficient lazy-evaluation iteration for iterable objects. The aim of this project is to support deno, node and browser, and support all native JavaScript systems for iteration (for-of, for-await-of, etc)."
   },
+  "leet": {
+    "type": "github",
+    "owner": "often",
+    "repo": "leet",
+    "desc": "Text to leetspeak module for Deno."
+  },
   "levenshtein": {
     "type": "github",
     "owner": "aosync",
@@ -1256,17 +1893,41 @@
     "repo": "lodash_require",
     "desc": "Lodash for the Deno runtime."
   },
+  "logger": {
+    "type": "github",
+    "owner": "fuxingZhang",
+    "repo": "deno-logger",
+    "desc": "A simple logger for deno."
+  },
+  "logol": {
+    "type": "github",
+    "owner": "apiel",
+    "repo": "logol",
+    "desc": "Console.log wrapper to had some color in the terminal."
+  },
   "lolcat": {
     "type": "github",
     "owner": "qwerttty",
     "repo": "lolcat",
     "desc": "This is a Deno port of the node port of the famous lolcat gem."
   },
+  "lru": {
+    "type": "github",
+    "owner": "liltoto",
+    "repo": "lru",
+    "desc": "Simple and powerful LRU cache"
+  },
   "luhn": {
     "type": "github",
     "owner": "howlowck",
     "repo": "deno-luhn",
     "desc": "Luhn Algorithm Validator"
+  },
+  "lz4": {
+    "type": "github",
+    "owner": "denosaurs",
+    "repo": "deno_lz4",
+    "desc": "A lz4 compression and decompression module implemented in WASM"
   },
   "mac": {
     "type": "github",
@@ -1304,6 +1965,18 @@
     "repo": "deno_math",
     "desc": "The math module is used to provide a helper for high-precision calculations and scientific computing."
   },
+  "maybe": {
+    "type": "github",
+    "owner": "iMarv",
+    "repo": "Maybe",
+    "desc": "A module for handling null and undefined values, inspired by Rusts Option<T>"
+  },
+  "maze_generator": {
+    "type": "github",
+    "owner": "TheWizardBear",
+    "repo": "maze_generator",
+    "desc": "A library for generating mazes."
+  },
   "md5": {
     "type": "github",
     "owner": "halvardssm",
@@ -1328,11 +2001,29 @@
     "repo": "memoize",
     "desc": "A simple and easy to use memoize lib for deno."
   },
+  "meteorite": {
+    "type": "github",
+    "owner": "AhmedAlYousif",
+    "repo": "meteorite",
+    "desc": "A framework to build REST APIs in Deno runtime."
+  },
   "microraptor": {
     "type": "github",
     "owner": "matteocrippa",
     "repo": "microraptor",
     "desc": "A deno lightweight middleware for easy REST development"
+  },
+  "mime": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "mime",
+    "desc": "🦕 A mime types for deno"
+  },
+  "mime_db": {
+    "type": "github",
+    "owner": "alirealasad",
+    "repo": "mime_db",
+    "desc": "This is a database of all mime types"
   },
   "minidate": {
     "type": "github",
@@ -1345,6 +2036,12 @@
     "owner": "chrisdothtml",
     "repo": "deno-minimatch",
     "desc": "A deno port of minimatch"
+  },
+  "minitable": {
+    "type": "github",
+    "owner": "bernardini687",
+    "repo": "minitable",
+    "desc": "Shape a list of data into a table"
   },
   "mith": {
     "type": "github",
@@ -1394,6 +2091,12 @@
     "repo": "ms",
     "desc": "Use this package to easily convert various time formats to milliseconds. It is ported from https://github.com/zeit/ms to work with Deno."
   },
+  "multiparser": {
+    "type": "github",
+    "owner": "deligenius",
+    "repo": "multiparser",
+    "desc": "A Deno module for parsing multipart/form-data"
+  },
   "murmurhash": {
     "type": "github",
     "owner": "justjavac",
@@ -1405,6 +2108,12 @@
     "owner": "alosaur",
     "repo": "mustache",
     "desc": "Mustache template renderer"
+  },
+  "mutevents": {
+    "type": "github",
+    "owner": "hazae41",
+    "repo": "mutevents",
+    "desc": "Typed, mutable, async events for deno"
   },
   "mysql": {
     "type": "github",
@@ -1448,6 +2157,18 @@
     "repo": "nexo",
     "desc": "A Deno and Next Cocktail"
   },
+  "next": {
+    "type": "github",
+    "owner": "mtwzim",
+    "repo": "next",
+    "desc": "Next is a reactive framework for Deno, inspired by ReactJS and Angular"
+  },
+  "nonstd": {
+    "type": "github",
+    "owner": "deno-nonstd",
+    "repo": "nonstd",
+    "desc": "A library of useful features that currently do not exist in the standard lib."
+  },
   "normalize_diacritics": {
     "type": "github",
     "owner": "motss",
@@ -1455,11 +2176,23 @@
     "path": "/normalize_diacritics",
     "desc": "Simple deno module to remove any accents/ diacritics found in a string."
   },
+  "notify": {
+    "type": "github",
+    "owner": "divy-work",
+    "repo": "deno-notify",
+    "desc": "Simple cross-platform desktop notifications for Deno"
+  },
   "novelcovid_wrapper": {
     "type": "github",
     "owner": "Joralmo",
     "repo": "deno-wrapper-novelcovid",
     "desc": "Wrapper of NovelCOVID/API for Deno"
+  },
+  "nth_check": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "nth-check",
+    "desc": "Performant nth-check parser & compiler for Deno"
   },
   "number_formatter": {
     "type": "github",
@@ -1473,6 +2206,12 @@
     "repo": "oak",
     "desc": "A middleware framework for Deno's http server, including a router middleware."
   },
+  "oak_graphql": {
+    "type": "github",
+    "owner": "aaronwlee",
+    "repo": "oak-graphql",
+    "desc": "A simple graphql middleware for oak deno framework."
+  },
   "oak_middleware": {
     "type": "github",
     "owner": "oakserver",
@@ -1484,6 +2223,13 @@
     "owner": "bsunderhus",
     "repo": "deno-observable",
     "desc": "tc39 proposal spec compatible observable"
+  },
+  "omelette": {
+    "type": "github",
+    "owner": "f",
+    "repo": "omelette",
+    "path": "/deno",
+    "desc": "A simple, template based autocompletion tool for Node and Deno projects with super easy API. (For Bash, Zsh and Fish)"
   },
   "once": {
     "type": "github",
@@ -1503,11 +2249,35 @@
     "repo": "deno-open",
     "desc": "A package for opening URLs, files and executables."
   },
+  "opener": {
+    "type": "github",
+    "owner": "denjucks",
+    "repo": "opener",
+    "desc": "A simple cross-platform browser opener for Deno."
+  },
   "opine": {
     "type": "github",
     "owner": "asos-craigmorten",
     "repo": "opine",
     "desc": "Fast, minimalist web framework for Deno ported from ExpressJS."
+  },
+  "organ": {
+    "type": "github",
+    "owner": "denjucks",
+    "repo": "organ",
+    "desc": "Logging middleware for the Oak framework, based on the morgan middleware for ExpressJS."
+  },
+  "pagic": {
+    "type": "github",
+    "owner": "xcatliu",
+    "repo": "pagic",
+    "desc": "The easiest way to generate static html page from markdown, built with Deno! 🦕"
+  },
+  "paleontologist": {
+    "type": "github",
+    "owner": "TrueWill",
+    "repo": "paleontologist",
+    "desc": "Scientist-like refactoring module for Deno in TypeScript"
   },
   "panoptes": {
     "type": "github",
@@ -1545,11 +2315,23 @@
     "repo": "PerlinNoise-Deno",
     "desc": "A simple to use perlin noise module for typescript."
   },
+  "permissionGuard": {
+    "type": "github",
+    "owner": "asos-craigmorten",
+    "repo": "permission-guard",
+    "desc": "A zero-dependency, minimal permission guard."
+  },
   "pg_format": {
     "type": "github",
     "owner": "grantcarthew",
     "repo": "deno-pg-format",
     "desc": "Deno implementation of PostgreSQL's format() to safely create dynamic SQL queries."
+  },
+  "pgc4d": {
+    "type": "github",
+    "owner": "jakajancar",
+    "repo": "pgc4d",
+    "desc": "A full-featured PostgreSQL client for Deno."
   },
   "pipeline": {
     "type": "github",
@@ -1562,6 +2344,12 @@
     "owner": "manyuanrong",
     "repo": "deno-plugin-prepare",
     "desc": "A library for managing deno native plugin dependencies."
+  },
+  "plugin_use": {
+    "type": "github",
+    "owner": "chaijs",
+    "repo": "plugin-use",
+    "desc": "A simple Event Emitter, tuned to be used as a plugin driver."
   },
   "podio": {
     "type": "github",
@@ -1587,6 +2375,12 @@
     "repo": "deno_pool",
     "desc": "A generic resource pool management library"
   },
+  "port": {
+    "type": "github",
+    "owner": "adoi",
+    "repo": "deno-port",
+    "desc": "Deno module to get an available TCP deno port for your server"
+  },
   "portl": {
     "type": "github",
     "owner": "FalkZ",
@@ -1595,7 +2389,7 @@
   },
   "postgres": {
     "type": "github",
-    "owner": "buildondata",
+    "owner": "deno-postgres",
     "repo": "deno-postgres",
     "desc": "PostgreSQL driver for Deno."
   },
@@ -1616,6 +2410,12 @@
     "owner": "bokuweb",
     "repo": "deno-pretty-assert",
     "desc": "This package has already moved to https://github.com/denoland/deno_std/tree/master/testing."
+  },
+  "pretty_benching": {
+    "type": "github",
+    "owner": "littletof",
+    "repo": "prettyBenching",
+    "desc": "A simple Deno library, that gives you pretty benchmarking progress and results in the commandline"
   },
   "pretty_bytes": {
     "type": "github",
@@ -1640,6 +2440,12 @@
     "owner": "axetroy",
     "repo": "deno_process",
     "desc": "process module for Deno"
+  },
+  "progress": {
+    "type": "github",
+    "owner": "fuxingZhang",
+    "repo": "deno-progress",
+    "desc": "Progress bar in terminal for deno"
   },
   "progressbar": {
     "type": "github",
@@ -1666,6 +2472,12 @@
     "repo": "ts-prove",
     "desc": "Decode and validate unknown data"
   },
+  "proxyScrape": {
+    "type": "github",
+    "owner": "often",
+    "repo": "proxyScrape",
+    "desc": "Lightweight proxy scraper for Deno."
+  },
   "proxy_bind": {
     "type": "github",
     "owner": "imcotton",
@@ -1677,6 +2489,12 @@
     "owner": "zorbyte",
     "repo": "pubsub",
     "desc": "A simplistic PubSub module for Deno."
+  },
+  "pug": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "pug",
+    "desc": "Pug – robust, elegant, feature rich template engine for Deno."
   },
   "punycode": {
     "type": "github",
@@ -1708,6 +2526,12 @@
     "repo": "deno-qs",
     "desc": "A querystring parser"
   },
+  "quarrel": {
+    "type": "github",
+    "owner": "fatalcenturion",
+    "repo": "quarrel",
+    "desc": "A command line argument parser"
+  },
   "rad": {
     "type": "github",
     "owner": "cdaringe",
@@ -1731,6 +2555,12 @@
     "owner": "zekth",
     "repo": "deno_random_interval",
     "desc": "deno random interval"
+  },
+  "reactive": {
+    "type": "github",
+    "owner": "bordoley",
+    "repo": "reactive-js",
+    "desc": "Functional reactive programming including Observables, Bi-directional asynchronous streams, and utilities"
   },
   "readline": {
     "type": "github",
@@ -1756,6 +2586,30 @@
     "repo": "reno",
     "desc": "A thin, testable routing library designed to sit on top of Deno's standard HTTP module"
   },
+  "resulty": {
+    "type": "github",
+    "owner": "robdwaller",
+    "repo": "resulty",
+    "desc": "Provides simple, Rust-like Result and Option objects for Deno."
+  },
+  "retry": {
+    "type": "github",
+    "owner": "franckLdx",
+    "repo": "retry",
+    "desc": "Re-execute a function until the function does not throw an error."
+  },
+  "rhino": {
+    "type": "github",
+    "owner": "faustotnc",
+    "repo": "rhino",
+    "desc": "Rhino 🦏 - Deno Framework for scalable APIs."
+  },
+  "rhinoder": {
+    "type": "github",
+    "owner": "Caesar2011",
+    "repo": "rhinoder",
+    "desc": "Reloads a deno application on every file change"
+  },
   "rimu": {
     "type": "github",
     "owner": "srackham",
@@ -1774,6 +2628,12 @@
     "repo": "router",
     "desc": "A high-performance basic router works everywhere."
   },
+  "rsocket": {
+    "type": "github",
+    "owner": "linux-china",
+    "repo": "rsocket-deno",
+    "desc": "Deno library to create/consume RSocket services."
+  },
   "rsync_parser": {
     "type": "github",
     "owner": "daniel-araujo",
@@ -1782,9 +2642,9 @@
   },
   "rubico": {
     "type": "github",
-    "owner": "richytong",
+    "owner": "a-synchronous",
     "repo": "rubico",
-    "desc": "a functional promise library"
+    "desc": "🏞 [a]synchronous functional syntax"
   },
   "rug": {
     "type": "github",
@@ -1798,11 +2658,29 @@
     "repo": "run_exclusive",
     "desc": "⚡🔒 Generate functions that do not allow parallel executions 🔒 ⚡"
   },
+  "run_with_limit": {
+    "type": "github",
+    "owner": "alextes",
+    "repo": "run_with_limit",
+    "desc": "Run promise-returning & async functions with limited concurrency"
+  },
+  "rupiah": {
+    "type": "github",
+    "owner": "andriawan",
+    "repo": "rupiah_ts",
+    "desc": "Simple indonesian rupiah currency format"
+  },
   "rute": {
     "type": "github",
     "owner": "jabernardo",
     "repo": "rute",
     "desc": "A Simple Router for Deno"
+  },
+  "rxjs": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "rxjs",
+    "desc": "🦕 A reactive programming library for Deno ⚡ "
   },
   "saur": {
     "type": "github",
@@ -1810,11 +2688,23 @@
     "repo": "saur",
     "desc": "Deno Saur is a full-stack web application framework with a focus on rapid development, similar to Django or Ruby on Rails."
   },
+  "scrypt": {
+    "type": "github",
+    "owner": "denorg",
+    "repo": "scrypt",
+    "desc": "Deno library for hashing passwords using scrypt"
+  },
   "secp256k1": {
     "type": "github",
     "owner": "paulmillr",
     "repo": "noble-secp256k1",
     "desc": "secp256k1, an elliptic curve that could be used for assymetric encryption and ECDSA signature scheme."
+  },
+  "secure_compare": {
+    "type": "github",
+    "owner": "hkatzdev",
+    "repo": "secure-compare",
+    "desc": "Constant-time comparison algorithm to prevent timing attacks (Deno edition)"
   },
   "semver": {
     "type": "github",
@@ -1846,11 +2736,23 @@
     "repo": "session",
     "desc": "Sessions for deno web frameworks"
   },
+  "sf": {
+    "type": "github",
+    "owner": "txthinking",
+    "repo": "sf",
+    "desc": "A stupid javascript web framework for deno"
+  },
   "sha1": {
     "type": "github",
     "owner": "chiefbiiko",
     "repo": "sha1",
     "desc": "SHA1 for deno."
+  },
+  "sha2": {
+    "type": "github",
+    "owner": "glatan",
+    "repo": "sha2",
+    "desc": "SHA-2 family for Deno."
   },
   "sha256": {
     "type": "github",
@@ -1913,14 +2815,6 @@
     "repo": "deno_slugify",
     "desc": "A string slugifier"
   },
-  "smoothish": {
-    "type": "github",
-    "owner": "smoothish",
-    "repo": "smoothish",
-    "path": "/index.js",
-    "defaultVersion": "deno",
-    "desc": "Smoothing out time-series data with boundary and missing data handling"
-  },
   "smtp": {
     "type": "github",
     "owner": "manyuanrong",
@@ -1932,6 +2826,18 @@
     "owner": "denjucks",
     "repo": "snelm",
     "desc": "Improved security middleware for the Oak, ABC, Alosaur, and Pogo web frameworks. Derived from the helmet middleware for Node"
+  },
+  "snowlight": {
+    "type": "github",
+    "owner": "trylix",
+    "repo": "snowlight",
+    "desc": "A middleware web framework like Express for Deno 🦕"
+  },
+  "sockets": {
+    "type": "github",
+    "owner": "drashland",
+    "repo": "sockets",
+    "desc": "A WebSocket library for Deno."
   },
   "soxa": {
     "type": "github",
@@ -1952,6 +2858,12 @@
     "repo": "specosaur",
     "desc": "Specification pattern library for Deno."
   },
+  "sql": {
+    "type": "github",
+    "owner": "yourtion",
+    "repo": "deno-sql",
+    "desc": "Powerful and Easy use SQL Query Builder on Deno"
+  },
   "sql_builder": {
     "type": "github",
     "owner": "manyuanrong",
@@ -1970,7 +2882,7 @@
     "repo": "deno_sqlite_plugin",
     "desc": "Native plugin for SQLite using rusqlite"
   },
-   "ssr": {
+  "ssr": {
     "type": "github",
     "owner": "maheshkareeya",
     "repo": "ssr",
@@ -2010,6 +2922,18 @@
     "repo": "strcolors.ts",
     "desc": "FMT String Extensions for Deno"
   },
+  "superdeno": {
+    "type": "github",
+    "owner": "asos-craigmorten",
+    "repo": "superdeno",
+    "desc": "HTTP assertions for Deno made easy via superagent."
+  },
+  "superoak": {
+    "type": "github",
+    "owner": "asos-craigmorten",
+    "repo": "superoak",
+    "desc": "HTTP assertions for Oak made easy via superdeno."
+  },
   "supports_color": {
     "type": "github",
     "owner": "frunkad",
@@ -2046,6 +2970,12 @@
     "repo": "talk-lib",
     "desc": "A send & receive library for Nextcloud Talk"
   },
+  "tar": {
+    "type": "github",
+    "owner": "divy-work",
+    "repo": "deno-tar",
+    "desc": "TAR archive management with Deno"
+  },
   "task_runner": {
     "type": "github",
     "owner": "jinjor",
@@ -2057,6 +2987,12 @@
     "owner": "ebebbington",
     "repo": "deno-task-runner-v2",
     "desc": "deno-task-runner-v2"
+  },
+  "tbl": {
+    "type": "github",
+    "owner": "jozsefsallai",
+    "repo": "tbl",
+    "desc": "Tiny and versatile command-line table generator."
   },
   "tckimlik": {
     "type": "github",
@@ -2075,6 +3011,12 @@
     "owner": "teddytags",
     "repo": "teddytags",
     "desc": "The superfast way to custom elements."
+  },
+  "telegram": {
+    "type": "github",
+    "owner": "stanislavstrelnikov",
+    "repo": "deno-telegram",
+    "desc": "Telegram Bot API"
   },
   "termcolorizer": {
     "type": "github",
@@ -2112,11 +3054,41 @@
     "repo": "deno_tokenizer",
     "desc": "A simple tokenizer for deno."
   },
+  "toolbelt": {
+    "type": "github",
+    "owner": "gokayokyay",
+    "repo": "toolbelt",
+    "desc": "Toolbelt for Deno"
+  },
+  "transport": {
+    "type": "github",
+    "owner": "SASNOVACAT08",
+    "repo": "transport",
+    "desc": "🦕 WebSocket for Deno 🦕"
+  },
   "tree": {
     "type": "github",
     "owner": "KSXGitHub",
     "repo": "deno-tree",
     "desc": "Traverse filesystem tree"
+  },
+  "trex": {
+    "type": "github",
+    "owner": "crewdevio",
+    "repo": "Trex",
+    "desc": "Package management for deno like npm"
+  },
+  "tweetnacl_deno": {
+    "type": "github",
+    "owner": "dr-useless",
+    "repo": "tweetnacl-deno",
+    "desc": "Port of TweetNaCl cryptographic library to TypeScript for Deno"
+  },
+  "twitter": {
+    "type": "github",
+    "owner": "iosamuel",
+    "repo": "twitter",
+    "desc": "Twitter's library in Deno"
   },
   "type_check": {
     "type": "github",
@@ -2124,11 +3096,23 @@
     "repo": "deno-type-check",
     "desc": "Runtime type check library for Deno"
   },
+  "type_detect": {
+    "type": "github",
+    "owner": "chaijs",
+    "repo": "type-detect",
+    "desc": "Improved typeof detection for node.js and the browser."
+  },
   "type_is": {
     "type": "github",
     "owner": "ako-deno",
     "repo": "type_is",
     "desc": "Infer the content-type of a HTTP Header for Deno"
+  },
+  "typed_numeric": {
+    "type": "github",
+    "owner": "glatan",
+    "repo": "typed_numeric_deno",
+    "desc": "TypedNumeric for Deno."
   },
   "types": {
     "type": "github",
@@ -2153,11 +3137,23 @@
     "package": "unexpected",
     "desc": "Extensible BDD assertion toolkit"
   },
+  "unrar": {
+    "type": "github",
+    "owner": "fuxingZhang",
+    "repo": "deno-unrar",
+    "desc": "uncompress rar file for deno"
+  },
   "up": {
     "type": "github",
     "owner": "denorg",
     "repo": "up",
     "desc": "Check if a website is currently up"
+  },
+  "upload_middleware_for_oak_framework": {
+    "type": "github",
+    "owner": "hviana",
+    "repo": "Upload-middleware-for-Oak-Deno-framework",
+    "desc": "Upload middleware for Oak framework"
   },
   "url_join": {
     "type": "github",
@@ -2170,6 +3166,12 @@
     "owner": "roonie007",
     "repo": "url-parse",
     "desc": "Parse/Build an url from a javascript object or a string"
+  },
+  "url_validator": {
+    "type": "github",
+    "owner": "r-kgy",
+    "repo": "url_validator",
+    "desc": "simple url validator for Deno"
   },
   "username": {
     "type": "github",
@@ -2187,7 +3189,7 @@
     "type": "github",
     "owner": "lucascaro",
     "repo": "deno-uuid",
-    "desc": "Warning: the library code of this module has been moved to https://deno.uz/std/testing/mod.ts."
+    "desc": "Warning: the library code of this module has been moved to https://deno.land/std/testing/mod.ts."
   },
   "uwuifier": {
     "type": "github",
@@ -2195,16 +3197,46 @@
     "repo": "uwuifier",
     "desc": "This very lightweight package allows you to uwuify any sentence or word (excluding URL's) with many configurable parameters while giving you access to many vewy kawaii sentences and faces"
   },
+  "validasaur": {
+    "type": "github",
+    "owner": "emsifa",
+    "repo": "validasaur",
+    "desc": "Deno validation library that slightly inspired by Laravel Validation"
+  },
   "validator": {
     "type": "github",
     "owner": "ryo-ma",
     "repo": "deno-validator",
     "desc": "🦕A simple string validation for deno"
   },
+  "validator_deno": {
+    "type": "github",
+    "owner": "validatorjs",
+    "repo": "validator-deno",
+    "desc": "The official port of validator.js for Deno"
+  },
+  "validatorjs": {
+    "type": "github",
+    "owner": "rubiin",
+    "repo": "validator",
+    "desc": "A Port of validatorjs to deno"
+  },
+  "valideno": {
+    "type": "github",
+    "owner": "Caesar2011",
+    "repo": "valideno",
+    "desc": "Validate your values and schemes with this extendable validator"
+  },
   "value_schema": {
     "type": "npm",
     "package": "value-schema",
     "desc": "simple, easy-to-use, and declarative schema validator"
+  },
+  "vary": {
+    "type": "github",
+    "owner": "ako-deno",
+    "repo": "vary",
+    "desc": "Manipulate the HTTP Vary header for Deno"
   },
   "velociraptor": {
     "type": "github",
@@ -2220,7 +3252,7 @@
   },
   "view_engine": {
     "type": "github",
-    "owner": "gjuoun",
+    "owner": "deligenius",
     "repo": "view-engine",
     "desc": "🚀A Template View Engine for Deno frameworks"
   },
@@ -2257,23 +3289,41 @@
     "repo": "deno-wasi",
     "desc": "WebAssembly System Interface bindings"
   },
+  "wasm_gzip": {
+    "type": "github",
+    "owner": "manyuanrong",
+    "repo": "wasm_gzip",
+    "desc": "Gzip encryption and decryption WebAssembly implementation for Deno"
+  },
   "watch": {
     "type": "github",
     "owner": "jinjor",
     "repo": "deno-watch",
     "desc": "A pure deno file watcher."
   },
-  "watch_v2": {
+  "web_name": {
     "type": "github",
-    "owner": "ebebbington",
-    "repo": "deno-watch-v2",
-    "desc": "deno-watch-v2"
+    "owner": "letskhabar",
+    "repo": "web-name",
+    "desc": "simple module to generate random usernames"
+  },
+  "webcomponent": {
+    "type": "github",
+    "owner": "DenoBRComunitty",
+    "repo": "webcomponent",
+    "desc": "Lightweight utilities for constructing web components"
   },
   "websocket": {
     "type": "github",
     "owner": "ryo-ma",
     "repo": "deno-websocket",
     "desc": "🦕A simple WebSocket library like ws of node.js"
+  },
+  "websocket_server": {
+    "type": "github",
+    "owner": "JohanWinther",
+    "repo": "websocket_server",
+    "desc": "A WebSocket server library for Deno 🔌"
   },
   "webview": {
     "type": "github",
@@ -2285,7 +3335,7 @@
     "type": "github",
     "owner": "denorg",
     "repo": "x-name",
-    "desc": "Check if a package name is available in deno.uz/x"
+    "desc": "Check if a package name is available in deno.land/x"
   },
   "xchacha20": {
     "type": "github",
@@ -2316,6 +3366,12 @@
     "owner": "akshgpt7",
     "repo": "youtube-deno",
     "desc": "A Deno client for the YouTube Data API v3. Lets you incorporate core YouTube features and almost any interaction with YouTube in your application."
+  },
+  "zap": {
+    "type": "github",
+    "owner": "deno-nonstd",
+    "repo": "zap",
+    "desc": "A wrapper for Deno command args to make it easier to run with complex options."
   },
   "zstd": {
     "type": "github",
