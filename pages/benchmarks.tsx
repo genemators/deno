@@ -15,48 +15,88 @@ import {
   formatPercentage,
   formatReqSec,
   formatKB,
+  formatFloat,
 } from "../util/benchmark_utils";
 import BenchmarkChart, { BenchmarkLoading } from "../components/BenchmarkChart";
-import { metaDescription } from ".";
+import { CookieBanner } from "../components/CookieBanner";
 
 // TODO(lucacasonato): add anchor points to headers
 const Benchmarks = () => {
   const _ = useRouter();
+  const location = typeof window !== "undefined" ? window.location : null;
 
-  const showAll =
-    typeof window === "undefined" ? false : location.search.endsWith("?all");
+  let show!: { dataFile: string; range: number[]; search: string };
+  // Default (recent).
+  show = {
+    dataFile: "recent.json",
+    range: [],
+    search: "",
+  };
+  while (location) {
+    // Show all.
+    if (location.search.endsWith("?all")) {
+      show = { dataFile: "data.json", range: [], search: "all" };
+      break;
+    }
+    // Custom range.
+    const range = decodeURIComponent(location.search)
+      .split(/([?,]|\.{2,})/g)
+      .filter(Boolean)
+      .map(Number)
+      .filter(Number.isInteger);
+    if ([1, 2].includes(range.length)) {
+      const search = range.join("...");
+      show = { dataFile: "data.json", range, search };
+      break;
+    }
+    break;
+  }
+  if (
+    location != null &&
+    location.search !== show.search &&
+    location.search !== `?${show.search}`
+  ) {
+    location.replace(location.toString().replace(/\?.*$/, `?${show.search}`));
+  }
+
+  const showAll = show.dataFile !== "recent.json";
+  const dataUrl = `https://denoland.github.io/benchmark_data/${show.dataFile}`;
 
   const [data, setData] = React.useState<BenchmarkData | null>(null);
+  const [dataRangeTitle, setDataRangeTitle] = React.useState<string>("");
   const [showNormalized, setShowNormalized] = React.useState(false);
 
   React.useEffect(() => {
     setData(null);
-    let dataUrl = "https://denoland.github.io/benchmark_data/recent.json";
-    if (showAll) {
-      dataUrl = "https://denoland.github.io/benchmark_data/data.json";
-    }
-
     fetch(dataUrl).then(async (response) => {
       const rawData = await response.json();
-      const data = reshape(rawData);
+      const data = reshape(rawData.slice(...show.range));
       setData(data);
+
+      // Show actual range in title bar (except when showing 'recent' only).
+      if (typeof window !== "undefined") {
+        setDataRangeTitle(
+          showAll
+            ? [(ks: number[]) => ks[0], (ks: number[]) => ks.pop()]
+                .map((f) => f([...rawData.keys()].slice(...show.range)))
+                .filter((k) => k != null)
+                .join("...")
+            : ""
+        );
+      }
     });
-  }, [showAll]);
+  }, [show.search]);
 
   return (
     <>
       <Head>
-        <title>Benchmarks - Deno</title>
-
-        {metaDescription({
-          title: "Benchmarks - Deno",
-          description: "Continuous benchmarks for Deno.",
-          url: "https://deno.uz/benchmarks",
-          image: "https://deno.uz/v1_wide.jpg",
-        })}
+        <title>
+          Benchmarks {dataRangeTitle ? `(${dataRangeTitle})` : `| Deno`}
+        </title>
       </Head>
+      <CookieBanner />
       <div className="bg-gray-50 min-h-full">
-        <Header subtitle="Davomiy Testlar" />
+        <Header subtitle="Continuous Benchmarks" />
         <div className="mb-12">
           <div className="max-w-screen-md mx-auto px-4 sm:px-6 md:px-8 mt-8 pb-8">
             <img src="/images/deno_logo_4.gif" className="mb-12 w-32 h-32" />
@@ -69,8 +109,8 @@ const Benchmarks = () => {
             <p className="mt-4">
               You are currently viewing data for{" "}
               {showAll ? "all" : "the most recent"} commits to the{" "}
-              <a href="https://github.com/denoland/deno">master</a> branch. You
-              can also view{" "}
+              <a href="https://github.com/denoland/deno">master</a>
+              branch. You can also view{" "}
               <Link
                 href="/benchmarks"
                 as={!showAll ? "/benchmarks?all" : "/benchmarks"}
@@ -129,12 +169,16 @@ const Benchmarks = () => {
                 </li>
               </ul>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  Execution time
-                </h5>
+                <a href="#execution-time" id="execution-time">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Execution time
+                  </h5>
+                </a>
                 <BenchmarkOrLoading
                   data={data}
-                  columns={data?.execTime}
+                  columns={data?.execTime.filter(
+                    ({ name }) => !["check", "no_check"].includes(name)
+                  )}
                   yLabel="seconds"
                   yTickFormat={formatLogScale}
                 />
@@ -148,36 +192,82 @@ const Benchmarks = () => {
                 </p>
               </div>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  Thread count
-                </h5>
-                <BenchmarkOrLoading data={data} columns={data?.threadCount} />
+                <a href="#thread-count" id="thread-count">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Thread count
+                  </h5>
+                </a>
+                <BenchmarkOrLoading
+                  data={data}
+                  columns={data?.threadCount.filter(
+                    ({ name }) => !["check", "no_check"].includes(name)
+                  )}
+                />
                 <p className="mt-1">
                   How many threads various programs use. Smaller is better.
                 </p>
               </div>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  Syscall count
-                </h5>
-                <BenchmarkOrLoading data={data} columns={data?.syscallCount} />
+                <a href="#syscall-count" id="syscall-count">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Syscall count
+                  </h5>
+                </a>{" "}
+                <BenchmarkOrLoading
+                  data={data}
+                  columns={data?.syscallCount.filter(
+                    ({ name }) => !["check", "no_check"].includes(name)
+                  )}
+                />
                 <p className="mt-1">
                   How many total syscalls are performed when executing a given
                   script. Smaller is better.
                 </p>
               </div>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  Max memory usage
-                </h5>
+                <a href="#max-memory-usage" id="max-memory-usage">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Max memory usage
+                  </h5>
+                </a>{" "}
                 <BenchmarkOrLoading
                   data={data}
-                  columns={data?.maxMemory}
+                  columns={data?.maxMemory.filter(
+                    ({ name }) => !["check", "no_check"].includes(name)
+                  )}
                   yLabel="megabytes"
                   yTickFormat={formatMB}
                 />
                 <p className="mt-1">
                   Max memory usage during execution. Smaller is better.
+                </p>
+              </div>
+            </div>
+            <div className="mt-20">
+              <h4 className="text-2xl font-bold tracking-tight">
+                TypeScript Performance
+              </h4>
+              <div className="mt-8">
+                <a href="#type-checking" id="type-checking">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Type Checking
+                  </h5>
+                </a>
+                <BenchmarkOrLoading
+                  data={data}
+                  columns={data?.execTime.filter(({ name }) => {
+                    console.log(name);
+                    return ["check", "no_check"].includes(name);
+                  })}
+                  yLabel="seconds"
+                  yTickFormat={formatFloat}
+                />
+                <p className="mt-1">
+                  In both cases, <code>std/examples/chat/server_test.ts</code>{" "}
+                  is cached by Deno. The workload contains 20 unique TypeScript
+                  modules. With <em>check</em> a full TypeScript type check is
+                  performed, while <em>no_check</em> uses the{" "}
+                  <code>--no-check</code> flag to skip a full type check.
                 </p>
               </div>
             </div>
@@ -207,9 +297,11 @@ const Benchmarks = () => {
                 </span>
               </p>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  HTTP Server Throughput
-                </h5>
+                <a href="#http-server-throughput" id="http-server-throughput">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    HTTP Server Throughput
+                  </h5>
+                </a>
                 <BenchmarkOrLoading
                   data={data}
                   columns={
@@ -285,9 +377,11 @@ const Benchmarks = () => {
                 </ul>
               </div>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  HTTP Latency
-                </h5>
+                <a href="#http-latency" id="http-latency">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    HTTP Latency
+                  </h5>
+                </a>{" "}
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.maxLatency}
@@ -300,9 +394,11 @@ const Benchmarks = () => {
                 </p>
               </div>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  HTTP Proxy Throughput
-                </h5>
+                <a href="#http-proxy-throughput" id="http-proxy-throughput">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    HTTP Proxy Throughput
+                  </h5>
+                </a>
                 <BenchmarkOrLoading
                   data={data}
                   columns={showNormalized ? data?.normalizedProxy : data?.proxy}
@@ -351,9 +447,11 @@ const Benchmarks = () => {
                 </ul>
               </div>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  Throughput
-                </h5>
+                <a href="#throughput" id="throughput">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Throughput
+                  </h5>
+                </a>
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.throughput}
@@ -375,9 +473,11 @@ const Benchmarks = () => {
             <div className="mt-20">
               <h4 className="text-2xl font-bold tracking-tight">Size</h4>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  Executable size
-                </h5>
+                <a href="#executable-size" id="executable-size">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Executable size
+                  </h5>
+                </a>
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.binarySize}
@@ -389,9 +489,11 @@ const Benchmarks = () => {
                 </p>
               </div>
               <div className="mt-8">
-                <h5 className="text-lg font-medium tracking-tight">
-                  Bundle size
-                </h5>
+                <a href="#bundle-size" id="bundle-size">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Bundle size
+                  </h5>
+                </a>{" "}
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.bundleSize}
@@ -401,18 +503,12 @@ const Benchmarks = () => {
                 <p className="mt-1">Size of different bundled scripts.</p>
                 <ul className="ml-8 list-disc my-2">
                   <li>
-                    <Link
-                      href="/[identifier]/[...path]"
-                      as="/std/http/file_server.ts"
-                    >
+                    <Link href="/[...rest]" as="/std/http/file_server.ts">
                       <a className="link">file_server</a>
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/[identifier]/[...path]"
-                      as="/std/examples/gist.ts"
-                    >
+                    <Link href="/[...rest]" as="/std/examples/gist.ts">
                       <a className="link">gist</a>
                     </Link>
                   </li>

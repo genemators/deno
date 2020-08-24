@@ -1,40 +1,56 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+  useCallback,
+} from "react";
+import { createPortal } from "react-dom";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter, Router } from "next/router";
-import { parseNameVersion, findEntry } from "../util/registry_utils";
+// @ts-expect-error
+import { DocSearchModal, useDocSearchKeyboardEvents } from "@docsearch/react";
+import versionMeta from "../versions.json";
+import { parseNameVersion } from "../util/registry_utils";
 import {
   TableOfContents,
   getTableOfContents,
   getFileURL,
   getDocURL,
+  versions,
 } from "../util/manual_utils";
 import Markdown from "./Markdown";
 import Transition from "./Transition";
-import { metaDescription } from "../pages";
+import { CookieBanner } from "./CookieBanner";
+import InlineCode from "./InlineCode";
 
-const denoEntry = findEntry("deno");
+function Hit({
+  hit,
+  children,
+}: {
+  hit: { url: string };
+  children: React.ReactElement;
+}) {
+  return (
+    <Link href="/[...rest]" as={hit.url}>
+      <a className="link">{children}</a>
+    </Link>
+  );
+}
 
 function Manual() {
   const { query, push, replace } = useRouter();
   const { version, path } = useMemo(() => {
-    const path =
-      (Array.isArray(query.path) ? query.path.join("/") : query.path) ?? "";
-    const [name, version] = parseNameVersion(
-      (Array.isArray(query.identifier)
-        ? query.identifier[0]
-        : query.identifier) ?? ""
-    );
-    return {
-      name,
-      version,
-      path: path ? `/${path}` : "/introduction",
-    };
+    const [identifier, ...pathParts] = (query.rest as string[]) ?? [];
+    const path = pathParts.length === 0 ? "" : `/${pathParts.join("/")}`;
+    const [_, version] = parseNameVersion(identifier ?? "");
+    return { version, path: path || "/introduction" };
   }, [query]);
 
   if (path.endsWith(".md")) {
     replace(
-      `/[identifier]${path ? "/[...path]" : ""}`,
+      `/[...rest]`,
       `/manual${version && version !== "" ? `@${version}` : ""}${path.replace(
         /\.md$/,
         ""
@@ -62,7 +78,7 @@ function Manual() {
       Router.events.off("routeChangeStart", hideSidebar);
       Router.events.off("routeChangeComplete", handleRouteChange);
     };
-  });
+  }, []);
 
   const scrollTOCIntoView = () =>
     document.getElementsByClassName("toc-active")[0]?.scrollIntoView();
@@ -79,15 +95,9 @@ function Manual() {
   ] = useState<TableOfContents | null>(null);
 
   const [content, setContent] = useState<string | null>(null);
-  const [versions, setVersions] = useState<string[] | null | undefined>();
-
-  const partialContent = useMemo(
-    () => content?.split(" ").slice(0, 20).join(""),
-    [content]
-  );
 
   useEffect(() => {
-    getTableOfContents(version ?? "master")
+    getTableOfContents(version ?? versions[0])
       .then(setTableOfContents)
       .then(scrollTOCIntoView)
       .catch((e) => {
@@ -105,7 +115,7 @@ function Manual() {
     if (tableOfContents) {
       const tempList: Array<{ path: string; name: string }> = [];
 
-      Object.entries(tableOfContents).map(([slug, entry]) => {
+      Object.entries(tableOfContents).forEach(([slug, entry]) => {
         tempList.push({ path: `/manual/${slug}`, name: entry.name });
 
         if (entry.children) {
@@ -120,9 +130,9 @@ function Manual() {
         tempList.findIndex((page) => page.path === `/manual${path}`)
       );
     }
-  }, [tableOfContents]);
+  }, [tableOfContents, path]);
 
-  const sourceURL = useMemo(() => getFileURL(version ?? "master", path), [
+  const sourceURL = useMemo(() => getFileURL(version ?? versions[0], path), [
     version,
     path,
   ]);
@@ -133,7 +143,7 @@ function Manual() {
       .then((res) => {
         if (res.status !== 200) {
           throw Error(
-            `Qo'llanma fayllarini yuklash paytida ${res.status} xatoligi yuz berdi.`
+            `Got an error (${res.status}) while getting the documentation file.`
           );
         }
         return res.text();
@@ -142,43 +152,113 @@ function Manual() {
       .catch((e) => {
         console.error("Failed to fetch content:", e);
         setContent(
-          "# 404 - Topilmadi\nKechirasiz, sahifa mavjud emasga o'xshaydi."
+          "# 404 - Not Found\nWhoops, the page does not seem to exist."
         );
       });
   }, [sourceURL]);
 
+  // SEARCH
+
+  const [isOpen, setIsOpen] = useState(false);
+  const searchButtonRef = useRef<HTMLButtonElement>();
+  const [initialQuery, setInitialQuery] = useState(null);
+
+  const onOpen = useCallback(() => {
+    setIsOpen(true);
+    setTimeout(() => {
+      document.getElementById("docsearch-input")?.focus();
+    }, 0);
+  }, [setIsOpen]);
+
+  const onClose = useCallback(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
+
+  const onInput = useCallback(
+    (e) => {
+      setIsOpen(true);
+      setInitialQuery(e.key);
+    },
+    [setIsOpen, setInitialQuery]
+  );
+
+  useDocSearchKeyboardEvents({
+    isOpen,
+    onOpen,
+    onClose,
+    onInput,
+    searchButtonRef,
+  });
+
   useEffect(() => {
-    setVersions(undefined);
-    denoEntry
-      ?.getVersionList()
-      .then((v) =>
-        // do not show old versions that do not have the new manual yet
-        setVersions(v?.filter((v) => v.startsWith("v1") && v !== "v1.0.0-rc1"))
-      )
-      .catch((e) => {
-        console.error("Failed to fetch versions:", e);
-        setVersions(null);
-      });
-  }, []);
+    function onPress(e: KeyboardEvent) {
+      if (!isOpen) {
+        if (e.key === "/" || e.key === "s") {
+          e.preventDefault();
+          onOpen();
+        }
+      }
+    }
+    window.addEventListener("keypress", onPress);
+    return () => window.removeEventListener("keypress", onPress);
+  }, [isOpen, onOpen]);
 
   function gotoVersion(newVersion: string) {
     push(
-      `/[identifier]${path ? "/[...path]" : ""}`,
+      `/[...rest]`,
       `/manual${newVersion !== "" ? `@${newVersion}` : ""}${path}`
     );
   }
 
+  const stdVersion =
+    version === undefined
+      ? versionMeta.std[0]
+      : ((versionMeta.cli_to_std as any)[version ?? ""] as string) ?? version;
+
   return (
     <div>
       <Head>
-        <title>Deno Qo'llanmasi</title>
-        {metaDescription({
-          title: "Deno Qo'llanmasi",
-          description: partialContent || "Deno Qo'llanmasi",
-          url: "https://deno.uz/manual",
-          image: "https://deno.uz/v1_wide.jpg",
-        })}
+        <title>Manual | Deno</title>
+        <link
+          rel="preconnect"
+          href="https://BH4D9OD16A-dsn.algolia.net"
+          crossOrigin="true"
+        />
       </Head>
+      {isOpen &&
+        createPortal(
+          <DocSearchModal
+            initialQuery={initialQuery}
+            initialScrollY={window.scrollY}
+            searchParameters={{
+              distinct: 1,
+            }}
+            onClose={onClose}
+            indexName="deno_manual"
+            apiKey="a05e65bb082b87ff0ae75506f1b29fce"
+            navigator={{
+              navigate({ suggestionUrl }: any) {
+                push("/[...rest]", suggestionUrl);
+              },
+            }}
+            hitComponent={Hit}
+            transformItems={(items: Array<{ url: string }>) => {
+              return items.map((item) => {
+                // We transform the absolute URL into a relative URL to
+                // leverage Next's preloading.
+                const a = document.createElement("a");
+                a.href = item.url;
+
+                return {
+                  ...item,
+                  url: `${a.pathname}${a.hash}`,
+                };
+              });
+            }}
+          />,
+          document.body
+        )}
+
       <div className="h-screen flex overflow-hidden">
         <Transition show={showSidebar}>
           <div className="md:hidden">
@@ -195,7 +275,7 @@ function Manual() {
                   <div
                     className="absolute inset-0 bg-gray-600 opacity-75"
                     onClick={hideSidebar}
-                  />
+                  ></div>
                 </div>
               </Transition>
               <Transition
@@ -209,8 +289,9 @@ function Manual() {
                 <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
                   <div className="absolute top-0 right-0 -mr-14 p-1">
                     <button
+                      role="button"
                       className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
-                      aria-label="Menyuni yopish"
+                      aria-label="Close sidebar"
                       onClick={hideSidebar}
                     >
                       <svg
@@ -230,7 +311,7 @@ function Manual() {
                   </div>
                   <div className="bg-gray-100 pb-4 pt-4 border-b border-gray-200">
                     <Link href="/">
-                      <a className="block flex items-center flex-shrink-0 px-4">
+                      <a className="flex items-center flex-shrink-0 px-4">
                         <img
                           src="/logo.svg"
                           alt="logo"
@@ -238,7 +319,7 @@ function Manual() {
                         />
                         <div className="mx-4 flex flex-col justify-center">
                           <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                            Deno Qo'llanmasi
+                            Deno Manual
                           </div>
                         </div>
                       </a>
@@ -269,11 +350,11 @@ function Manual() {
           <div className="flex flex-col w-72 border-r border-gray-200 bg-gray-50">
             <div className="bg-gray-100 pb-4 pt-4 border-b border-gray-200">
               <Link href="/">
-                <a className="block flex items-center flex-shrink-0 px-4">
+                <a className="flex items-center flex-shrink-0 px-4">
                   <img src="/logo.svg" alt="logo" className="w-auto h-12" />
                   <div className="mx-4 flex flex-col justify-center">
                     <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                      Deno Qo'llanmasi
+                      Deno Manual
                     </div>
                   </div>
                 </a>
@@ -294,20 +375,23 @@ function Manual() {
           </div>
         </div>
         <div className="flex flex-col w-0 flex-1 overflow-hidden">
-          <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow md:hidden">
+          <div className="z-10 flex-shrink-0 flex h-16 bg-white shadow md:hidden">
             <Link href="/">
               <a className="px-4 flex items-center justify-center md:hidden">
                 <img src="/logo.svg" alt="logo" className="w-auto h-10" />
               </a>
             </Link>
-            <div className="flex-1 px-4 flex justify-between">
+            <div className="border-l border-r border-gray-200 flex-1 px-4 flex justify-between">
               <div className="flex-1 flex">
-                {/* <div className="w-full flex md:ml-0">
+                <div className="w-full flex justify-between h-full">
                   <label htmlFor="search_field" className="sr-only">
                     Search
                   </label>
-                  <div className="relative w-full text-gray-400 focus-within:text-gray-600">
-                    <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
+                  <button
+                    className="w-full text-gray-400 focus-within:text-gray-600 flex items-center"
+                    onClick={onOpen}
+                  >
+                    <div className="flex items-center pointer-events-none">
                       <svg
                         className="h-5 w-5"
                         fill="currentColor"
@@ -320,14 +404,15 @@ function Manual() {
                         />
                       </svg>
                     </div>
-                    <input
-                      id="search_field"
-                      className="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
-                      placeholder="Search"
-                      type="search"
-                    />
-                  </div>
-                </div> */}
+                    <div className="pl-6">
+                      <span className="inline sm:hidden">Search docs</span>
+                      <span className="hidden sm:inline">
+                        Search the docs (press <InlineCode>/</InlineCode> to
+                        focus)
+                      </span>
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <button
@@ -356,62 +441,107 @@ function Manual() {
             tabIndex={0}
             ref={manualEl}
           >
+            <div className="h-16 bg-white shadow hidden md:block">
+              <div className="max-w-screen-md mx-auto px-12 w-full flex justify-between h-full">
+                <label htmlFor="search_field" className="sr-only">
+                  Search
+                </label>
+                <button
+                  className="w-full text-gray-400 focus-within:text-gray-600 flex items-center"
+                  onClick={onOpen}
+                  ref={searchButtonRef as any}
+                >
+                  <div className="flex items-center pointer-events-none">
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="pl-6">
+                    Search the docs (press <InlineCode>/</InlineCode> to focus)
+                  </div>
+                </button>
+              </div>
+            </div>
+            <CookieBanner />
             <div className="max-w-screen-md mx-auto px-4 sm:px-6 md:px-8 pb-12 sm:pb-20">
               {content ? (
                 <>
-                  <Markdown source={content} canonicalURL={sourceURL} />
-                  <div className="pt-4 border-t border-gray-200">
-                    {pageIndex !== 0 && (
-                      <Link
-                        href="/[identifier]/[...path]"
-                        as={pageList[pageIndex - 1].path}
-                      >
+                  <a
+                    href={getDocURL(version ?? versions[0], path)}
+                    className={`text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out float-right ${
+                      path.split("/").length === 2 ? "mt-11" : "mt-9"
+                    } mr-4`}
+                  >
+                    <span className="sr-only">GitHub</span>
+                    <svg
+                      className="h-6 w-6 inline"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <title>Github | Deno</title>
+                      <path
+                        fillRule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <Markdown
+                    source={content.replace(/\$STD_VERSION/g, stdVersion)}
+                    displayURL={`https://deno.land/manual${
+                      version ? `@${version}` : ""
+                    }${path}`}
+                    sourceURL={sourceURL}
+                    baseURL={`https://deno.land/manual${
+                      version ? `@${version}` : ""
+                    }`}
+                  />
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    {pageList[pageIndex - 1] !== undefined && (
+                      <Link href="/[...rest]" as={pageList[pageIndex - 1].path}>
                         <a className="text-gray-900 hover:text-gray-600 font-normal">
                           ← {pageList[pageIndex - 1].name}
                         </a>
                       </Link>
                     )}
-                    {pageIndex !== pageList.length - 1 && (
-                      <Link
-                        href="/[identifier]/[...path]"
-                        as={pageList[pageIndex + 1].path}
-                      >
+                    {pageList[pageIndex + 1] !== undefined && (
+                      <Link href="/[...rest]" as={pageList[pageIndex + 1].path}>
                         <a className="text-gray-900 hover:text-gray-600 font-normal float-right">
                           {pageList[pageIndex + 1].name} →
                         </a>
                       </Link>
                     )}
                   </div>
-                  <div className="pt-2 clear-both">
-                    <a
-                      className="text-gray-500 hover:text-gray-400 font-normal float-right"
-                      href={getDocURL(version ?? "master", path)}
-                    >
-                      GitHub da ko'zdan kechirish
-                    </a>
-                  </div>
                 </>
               ) : (
                 <div className="w-full my-8">
-                  <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8" />
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10" />
-                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4" />
-                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4" />
-                  <div className="w-3/4 bg-gray-100 h-3 mt-4" />
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4" />
-                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4" />
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10" />
-                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4" />
-                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4" />
-                  <div className="w-3/4 bg-gray-100 h-3 mt-4" />
-                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4" />
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4" />
-                  <div className="w-3/4 bg-gray-100 h-3 mt-10" />
-                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4" />
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4" />
-                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4" />
-                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4" />
-                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4" />
+                  <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8"></div>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10"></div>
+                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
+                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-3/4 bg-gray-100 h-3 mt-4"></div>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-10"></div>
+                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-3/4 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-3/4 bg-gray-100 h-3 mt-10"></div>
+                  <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
+                  <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
                 </div>
               )}
             </div>
@@ -428,38 +558,37 @@ function Version({
   gotoVersion,
 }: {
   version: string | undefined;
-  versions: string[] | null | undefined;
+  versions: string[];
   gotoVersion: (version: string) => void;
 }) {
   return (
     <div className="mt-5 px-4">
       <label htmlFor="version" className="sr-only">
-        Versiya
+        Version
       </label>
       <div className="mt-1 sm:mt-0 sm:col-span-2">
         <div className="max-w-xs rounded-md shadow-sm">
           <select
             id="version"
             className="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-            value={version}
+            value={version ?? versions[0]}
             onChange={({ target: { value: newVersion } }) =>
               gotoVersion(newVersion)
             }
           >
-            {versions && version && !versions.includes(version) && (
+            {version && version !== "master" && !versions.includes(version) && (
               <option key={version} value={version}>
                 {version}
               </option>
             )}
-            <option key="" value="">
+            <option key="master" value="master">
               master
             </option>
-            {versions &&
-              versions.map((v) => (
-                <option key={v} value={v}>
-                  {v}
-                </option>
-              ))}
+            {versions.map((v) => (
+              <option key={v} value={v}>
+                {v}
+              </option>
+            ))}
           </select>
         </div>
       </div>
@@ -478,14 +607,14 @@ function ToC({
 }) {
   return (
     <div className="pt-2 pb-8 h-0 flex-1 flex flex-col overflow-y-auto">
-      <nav className="flex-1 px-2 px-4">
-        <ol className="pl-2 list-decimal list-inside font-semibold nested">
+      <nav className="flex-1 px-4">
+        <ol className="list-decimal list-inside font-semibold nested">
           {tableOfContents &&
             Object.entries(tableOfContents).map(([slug, entry]) => {
               return (
                 <li key={slug} className="my-2">
                   <Link
-                    href="/[identifier]/[...path]"
+                    href="/[...rest]"
                     as={`/manual${version ? `@${version}` : ""}/${slug}`}
                   >
                     <a
@@ -504,7 +633,7 @@ function ToC({
                         ([childSlug, name]) => (
                           <li key={`${slug}/${childSlug}`} className="my-0.5">
                             <Link
-                              href="/[identifier]/[...path]"
+                              href="/[...rest]"
                               as={`/manual${
                                 version ? `@${version}` : ""
                               }/${slug}/${childSlug}`}

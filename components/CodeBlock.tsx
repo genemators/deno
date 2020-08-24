@@ -1,11 +1,14 @@
 /* Copyright 2020 the Deno authors. All rights reserved. MIT license. */
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import Router from "next/router";
 import Highlight, { Prism } from "prism-react-renderer";
 import light from "prism-react-renderer/themes/github";
 import { useLayoutEffect } from "react";
+
+(typeof global !== "undefined" ? global : (window as any)).Prism = Prism;
+
+require("prismjs/components/prism-rust");
+require("prismjs/components/prism-toml");
 
 export interface CodeBlockProps {
   code: string;
@@ -20,7 +23,13 @@ export interface CodeBlockProps {
     | "markdown"
     | "bash"
     | "shell"
-    | "text";
+    | "text"
+    | "rust"
+    | "python"
+    | "toml"
+    | "wasm"
+    | "makefile"
+    | "dockerfile";
 }
 
 export const RawCodeBlock = ({
@@ -31,38 +40,55 @@ export const RawCodeBlock = ({
   enableLineRef = false,
 }: CodeBlockProps & { className?: string; enableLineRef?: boolean }) => {
   const [hashValue, setHashValue] = useState("");
-  useEffect(() => {
-    Router.events.on("hashChangeComplete", (url: any) => {
-      setHashValue(url.slice(url.indexOf("#")));
-    });
-    const { hash } = location;
-    setHashValue(hash);
-    return () => {
-      Router.events.off("hashChangeComplete", () => {});
-    };
-  }, []);
-
-  useLayoutEffect(() => {
-    const hash = hashValue
-      .split("-")
-      .map((e) => /([\d]+)/.exec(e)![0])
-      .map((e) => parseInt(e, 10))
-      .sort((a, b) => a - b)
-      .map((e) => `L${e}`);
-    if (hash.length) {
-      const idEl = document.getElementById(hash[0]);
-      if (idEl) {
-        idEl.scrollIntoView({ block: "center", behavior: "smooth" });
-        return;
-      }
+  const codeDivClassNames =
+    "text-gray-300 token-line text-right select-none text-xs";
+  const onClick = (e: React.MouseEvent) => {
+    if (e.shiftKey) {
+      e.preventDefault();
+      const { hash } = location;
+      const target = (e.target as HTMLAnchorElement).hash;
+      location.hash = hash
+        ? hash.replace(/(-.+)?$/, target.replace("#", "-"))
+        : target;
     }
-  });
+  };
+  if (enableLineRef) {
+    useEffect(() => {
+      const onHashChange = () => {
+        setHashValue(location.hash);
+      };
+      window.addEventListener("hashchange", onHashChange);
+      onHashChange();
+      return () => {
+        window.removeEventListener("hashchange", onHashChange);
+      };
+    }, []);
+
+    useLayoutEffect(() => {
+      const parts = hashValue.split("-");
+      if (parts.length > 1) {
+        const hash = parts
+          .map((e) => /([\d]+)/.exec(e)![0])
+          .map((e) => parseInt(e, 10))
+          .sort((a, b) => a - b)
+          .map((e) => `L${e}`);
+        if (hash.length) {
+          const idEl = document.getElementById(hash[0]);
+          if (idEl) {
+            idEl.scrollIntoView({ block: "center", behavior: "smooth" });
+            return;
+          }
+        }
+      }
+    });
+  }
 
   return (
     <Highlight
       Prism={Prism}
       theme={light}
       code={code}
+      // @ts-ignore
       language={
         language === "shell" ? "bash" : language === "text" ? "diff" : language
       }
@@ -78,25 +104,22 @@ export const RawCodeBlock = ({
             tokens.length === 1 &&
             (language === "bash" || language === "shell") && (
               <code className="pr-2 sm:pr-3">
-                <div className="text-gray-400 token-line text-right select-none">
-                  $
-                </div>
+                <div className={codeDivClassNames}>$</div>
               </code>
             )}
           {tokens.length > 1 && !disablePrefixes && (
             <code className="pr-2 sm:pr-3">
               {tokens.map((line, i) =>
                 line[0]?.empty && i === tokens.length - 1 ? null : (
-                  <div
-                    key={i + "l"}
-                    className="text-gray-400 token-line text-right select-none"
-                  >
+                  <div key={i + "l"} className={codeDivClassNames}>
                     {enableLineRef ? (
-                      <Link href={`#L${i + 1}`}>
-                        <a id={`L${i + 1}`} href={`#L${i + 1}`}>
-                          {i + 1}{" "}
-                        </a>
-                      </Link>
+                      <a
+                        id={`L${i + 1}`}
+                        href={`#L${i + 1}`}
+                        onClick={enableLineRef && onClick}
+                      >
+                        {i + 1}{" "}
+                      </a>
                     ) : (
                       i + 1
                     )}
@@ -108,6 +131,7 @@ export const RawCodeBlock = ({
           <code>
             {tokens.map((line, i) => {
               const lineProps = getLineProps({ line, key: i });
+              lineProps.className += " text-xs";
               if (
                 enableLineRef &&
                 hashValue &&
@@ -144,7 +168,7 @@ const CodeBlock = ({ code, language, disablePrefixes }: CodeBlockProps) => {
       code={code}
       language={language}
       disablePrefixes={disablePrefixes}
-      className="rounded border border-gray-200 p-1 px-2 sm:px-3"
+      className="p-4"
     />
   );
 };

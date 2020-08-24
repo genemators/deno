@@ -1,51 +1,86 @@
-import { parseNameVersion, findEntry } from "../../util/registry_utils";
+import { parseNameVersion } from "../../util/registry_utils";
+
+const S3_BUCKET =
+  "http://deno-registry-prod-storagebucket-d7uq3yal946u.s3-website-us-east-1.amazonaws.com/";
 
 export async function handleRegistryRequest(url: URL): Promise<Response> {
   console.log("registry request", url.pathname);
-  const remoteUrl = getRegistrySourceURL(url.pathname);
-  if (!remoteUrl) {
-    return new Response("Not in database.json: " + url.pathname, {
-      status: 404,
-      statusText: "Not Found",
+  const entry = parsePathname(url.pathname);
+  if (!entry) {
+    return new Response("This module entry is invalid: " + url.pathname, {
+      status: 400,
       headers: { "content-type": "text/plain" },
     });
   }
-
-  let response = await fetch(remoteUrl);
-  response = new Response(response.body, response);
-  if (needsWarning(url.pathname)) {
-    response.headers.set(
-      "X-Deno-Warning",
-      `Implicitly using master branch ${url}`
-    );
-  }
-  const originContentType = response.headers.get("content-type");
-  if (
-    response.ok &&
-    (!originContentType || originContentType?.includes("text/plain"))
-  ) {
-    const charset = originContentType?.includes("charset=utf-8")
-      ? "; charset=utf-8"
-      : "";
-    if (url.pathname.endsWith(".js")) {
-      response.headers.set("content-type", `application/javascript${charset}`);
-    } else if (url.pathname.endsWith(".ts")) {
-      response.headers.set("content-type", `application/typescript${charset}`);
+  const { module, version, path } = entry;
+  if (!version) {
+    const latest = await getLatestVersion(module);
+    if (!latest) {
+      return new Response(
+        "This module has no latest version: " + url.pathname,
+        {
+          status: 404,
+          headers: { "content-type": "text/plain" },
+        }
+      );
     }
+    console.log("registry redirect", module, latest);
+    return new Response(undefined, {
+      headers: {
+        Location: `${module === "std" ? "" : "/x"}/${module}@${latest}/${path}`,
+        "x-deno-warning": `Implicitly using latest version (${latest}) for ${
+          url.origin
+        }${module === "std" ? "" : "/x"}/${module}/${path}`,
+      },
+      status: 302,
+    });
+  }
+  if (version.startsWith("v") && module === "std") {
+    console.log("std version prefix", module, version);
+    return new Response(undefined, {
+      headers: {
+        Location: `/std@${version.substring(1)}/${path}`,
+        "x-deno-warning": `std versions prefixed with 'v' will be deprecated on October 1st 2020. Please change your import to ${
+          url.origin
+        }${module === "std" ? "" : "/x"}/${module}@${version.substring(
+          1
+        )}/${path} (at ${url.origin}${
+          module === "std" ? "" : "/x"
+        }/${module}@${version}/${path})`,
+      },
+      status: 302,
+    });
+  }
+  const remoteUrl = getBackingURL(module, version, path);
+  // @ts-ignore
+  const resp = await fetch(remoteUrl, { cf: { cacheEverything: true } });
+  const resp2 =
+    resp.status === 403 || resp.status === 404
+      ? new Response("404 Not Found", { status: 404 })
+      : new Response(resp.body, resp);
+
+  // JSX and TSX content type fix
+  if (
+    remoteUrl.endsWith(".jsx") &&
+    !resp2.headers.get("content-type")?.includes("javascript")
+  ) {
+    resp2.headers.set("content-type", "application/javascript");
+  } else if (
+    remoteUrl.endsWith(".tsx") &&
+    !resp2.headers.get("content-type")?.includes("typescript")
+  ) {
+    resp2.headers.set("content-type", "application/typescript");
   }
 
-  response.headers.set("Access-Control-Allow-Origin", "*");
-
-  return response;
+  resp2.headers.set("Access-Control-Allow-Origin", "*");
+  return resp2;
 }
 
-export function needsWarning(pathname: string): boolean {
-  return pathname.startsWith("/std") && !pathname.startsWith("/std@");
-}
-
-export function getRegistrySourceURL(pathname: string): string | undefined {
+export function parsePathname(
+  pathname: string
+): { module: string; version: string | undefined; path: string } | undefined {
   if (pathname.startsWith("/std")) {
-    return getRegistrySourceURL("/x" + pathname);
+    return parsePathname("/x" + pathname);
   }
   if (!pathname.startsWith("/x/")) {
     return undefined;
@@ -54,6 +89,18 @@ export function getRegistrySourceURL(pathname: string): string | undefined {
   const [nameBranch, ...rest] = nameBranchRest.split("/");
   const [name, version] = parseNameVersion(nameBranch);
   const path = rest.join("/");
-  const entry = findEntry(name);
-  return entry?.getSourceURL("/" + path, version);
+  return { module: name, version, path };
+}
+
+export function getBackingURL(module: string, version: string, path: string) {
+  return `${S3_BUCKET}${module}/versions/${version}/raw/${path}`;
+}
+
+export async function getLatestVersion(
+  module: string
+): Promise<string | undefined> {
+  const res = await fetch(`${S3_BUCKET}${module}/meta/versions.json`);
+  if (!res.ok) return undefined;
+  const versions = await res.json();
+  return versions?.latest;
 }
