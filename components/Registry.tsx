@@ -149,7 +149,7 @@ const Registry = () => {
         getVersionDeps(name, version)
           .then(setVersionDeps)
           .catch((e) => {
-            console.error("Failed to fetch dependency information:", e);
+            console.error("Proyekt haqida ma'lumotlarni yuklash jarayonida xatolik yuz berdi:", e);
             setVersionDeps(null);
           });
       } else {
