@@ -287,7 +287,7 @@ const Registry = () => {
       <CookieBanner />
       <div className="bg-gray-50 min-h-full">
         <Header
-          subtitle={name === "std" ? "Standard Library" : "Third Party Modules"}
+          subtitle={name === "std" ? "Standard Modullar" : "Uchinchi Darajali Modullar"}
           widerContent={true}
         />
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 py-2 pb-8 pt-4">
