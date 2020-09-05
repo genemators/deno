@@ -364,7 +364,7 @@ const Registry = () => {
                         return (
                           <div className="rounded-lg overflow-hidden border border-gray-200 bg-white">
                             <div className="bg-gray-100 h-10 w-full border-b border-gray-200 px-4 py-3">
-                              <div className="w-3/5 sm:w-1/5 bg-gray-200 h-4"></div>
+                              <div className="w-3/5 sm:w-1/5 bg-gray-200 h-4"/>
                             </div>
                             <div className="w-full p-4">
                               <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8"></div>
