@@ -101,7 +101,10 @@ function Manual() {
       .then(setTableOfContents)
       .then(scrollTOCIntoView)
       .catch((e) => {
-        console.error("Kontentlar jadvallarini yuklashda xatolik yuz berdi:", e);
+        console.error(
+          "Kontentlar jadvallarini yuklashda xatolik yuz berdi:",
+          e
+        );
         setTableOfContents(null);
       });
   }, [version]);
