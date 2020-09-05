@@ -364,16 +364,16 @@ const Registry = () => {
                         return (
                           <div className="rounded-lg overflow-hidden border border-gray-200 bg-white">
                             <div className="bg-gray-100 h-10 w-full border-b border-gray-200 px-4 py-3">
-                              <div className="w-3/5 sm:w-1/5 bg-gray-200 h-4"/>
+                              <div className="w-3/5 sm:w-1/5 bg-gray-200 h-4" />
                             </div>
                             <div className="w-full p-4">
-                              <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8"/>
-                              <div className="sm:w-2/3 bg-gray-100 h-3 mt-6"/>
-                              <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"/>
-                              <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"/>
-                              <div className="w-3/4 bg-gray-100 h-3 mt-4"/>
-                              <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"/>
-                              <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"/>
+                              <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8" />
+                              <div className="sm:w-2/3 bg-gray-100 h-3 mt-6" />
+                              <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4" />
+                              <div className="sm:w-3/5 bg-gray-100 h-3 mt-4" />
+                              <div className="w-3/4 bg-gray-100 h-3 mt-4" />
+                              <div className="sm:w-2/3 bg-gray-100 h-3 mt-4" />
+                              <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4" />
                             </div>
                           </div>
                         );
@@ -422,8 +422,8 @@ const Registry = () => {
                         {versionMeta === undefined ||
                         moduleMeta === undefined ? (
                           <>
-                            <div className="w-4/5 sm:w-full bg-gray-100 h-3 my-2"/>
-                            <div className="w-4/5 sm:w-2/3 bg-gray-100 h-3 my-2 block sm:hidden md:block"/>
+                            <div className="w-4/5 sm:w-full bg-gray-100 h-3 my-2" />
+                            <div className="w-4/5 sm:w-2/3 bg-gray-100 h-3 my-2 block sm:hidden md:block" />
                             <div className="mt-3 flex items-center py-0.5">
                               <svg
                                 className="h-5 w-5 mr-2 inline text-gray-200"
