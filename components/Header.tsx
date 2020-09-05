@@ -81,7 +81,7 @@ const Header = ({
           </Link>
           <Link href="/x">
             <a className="ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
-              Third Party Modules
+              Uchinchi Darajali Modullar
             </a>
           </Link>
           <a
@@ -162,12 +162,12 @@ const Header = ({
               <div className="px-2 pt-4 pb-3">
                 <Link href="/" as="/#installation">
                   <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
-                    Install
+                    O'rnatish
                   </a>
                 </Link>
                 <Link href="/[...rest]" as="/manual">
                   <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
-                    Manual
+                    Qo'llanma
                   </a>
                 </Link>
                 <a
