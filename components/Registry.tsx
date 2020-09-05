@@ -323,10 +323,10 @@ const Registry = () => {
               ) {
                 return (
                   <ErrorMessage
-                    title="No uploaded versions"
-                    body={`This module name has been reserved for a repository, but no versions have been uploaded yet. Modules that do not upload a version within 30 days of registration will be removed. ${
+                    title="Yuklangan biron versiya mavjud emas"
+                    body={`Bu modul repozitoriya sifatida qo'shilgan, hamda shu vaqtgacha biron versiyasi yuklanmagan. Registratsiyadan keyingi 30 kungacha modul versiyasi yuklanmasa avtomatik tarzda olib tashlanadi. ${
                       versions.isLegacy
-                        ? "If you are the owner of this module, please re-add the GitHub repository with deno.land/x (by following the instructions at https://deno.land/x#add), and publish a new version."
+                        ? "Agar siz shu modul egasi bo'lsangiz, iltimos, GitHub proyekt repozitoriyangizni deno.land/x ssilkasi ostida qaytattan qo'shing (shu instruksiya yordamida https://deno.land/x#add), va qayta yangi versiya taqdim eting."
                         : ""
                     }`}
                   />
