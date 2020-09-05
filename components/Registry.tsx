@@ -423,7 +423,7 @@ const Registry = () => {
                         moduleMeta === undefined ? (
                           <>
                             <div className="w-4/5 sm:w-full bg-gray-100 h-3 my-2"/>
-                            <div className="w-4/5 sm:w-2/3 bg-gray-100 h-3 my-2 block sm:hidden md:block"></div>
+                            <div className="w-4/5 sm:w-2/3 bg-gray-100 h-3 my-2 block sm:hidden md:block"/>
                             <div className="mt-3 flex items-center py-0.5">
                               <svg
                                 className="h-5 w-5 mr-2 inline text-gray-200"
