@@ -343,8 +343,8 @@ const Registry = () => {
                       ) {
                         return (
                           <ErrorMessage
-                            title="404 - Not Found"
-                            body="This version does not exist for this module."
+                            title="404 - Mavjud emas"
+                            body="Modulning ko'rsatilgan versiyasi mavjud emas."
                           />
                         );
                       } else if (
