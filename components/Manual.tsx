@@ -101,7 +101,7 @@ function Manual() {
       .then(setTableOfContents)
       .then(scrollTOCIntoView)
       .catch((e) => {
-        console.error("Failed to fetch table of contents:", e);
+        console.error("Kontentlar jadvallarini yuklashda xatolik yuz berdi:", e);
         setTableOfContents(null);
       });
   }, [version]);
@@ -143,16 +143,16 @@ function Manual() {
       .then((res) => {
         if (res.status !== 200) {
           throw Error(
-            `Got an error (${res.status}) while getting the documentation file.`
+            `Dokumentatsiya faylini yuklash jarayonida (${res.status}) xatoligi yuz berdi.`
           );
         }
         return res.text();
       })
       .then(setContent)
       .catch((e) => {
-        console.error("Failed to fetch content:", e);
+        console.error("Kontent yuklashda xatolik yuz berdi:", e);
         setContent(
-          "# 404 - Not Found\nWhoops, the page does not seem to exist."
+          "# 404 - Topilmadi\nUzr, o'ylashimcha shu sahifa mavjud emas."
         );
       });
   }, [sourceURL]);
@@ -218,7 +218,7 @@ function Manual() {
   return (
     <div>
       <Head>
-        <title>Manual | Deno</title>
+        <title>Qo'llanma | Deno</title>
         <link
           rel="preconnect"
           href="https://BH4D9OD16A-dsn.algolia.net"
@@ -319,7 +319,7 @@ function Manual() {
                         />
                         <div className="mx-4 flex flex-col justify-center">
                           <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                            Deno Manual
+                            Deno Qo'llanma
                           </div>
                         </div>
                       </a>
