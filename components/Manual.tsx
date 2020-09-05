@@ -354,7 +354,7 @@ function Manual() {
                   <img src="/logo.svg" alt="logo" className="w-auto h-12" />
                   <div className="mx-4 flex flex-col justify-center">
                     <div className="font-bold text-gray-900 leading-6 text-2xl tracking-tight">
-                      Deno Manual
+                      Deno Qo'llanma
                     </div>
                   </div>
                 </a>
