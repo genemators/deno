@@ -27,7 +27,7 @@ const Footer = (props: { simple?: boolean }) => (
         <div className="px-5 py-2">
           <Link href="/[...rest]" as="/std">
             <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              Standard Modullar
+              Standart Modullar
             </a>
           </Link>
         </div>
