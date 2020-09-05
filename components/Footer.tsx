@@ -21,20 +21,20 @@ const Footer = (props: { simple?: boolean }) => (
             href="https://doc.deno.land/builtin/stable"
             className="text-base leading-6 text-gray-500 hover:text-gray-900"
           >
-            Runtime API
+            Yordamchi API
           </a>
         </div>
         <div className="px-5 py-2">
           <Link href="/[...rest]" as="/std">
             <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              Standard Library
+              Standard Modullar
             </a>
           </Link>
         </div>
         <div className="px-5 py-2">
           <Link href="/x">
             <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              Third Party Modules
+              Uchinchi Darajali Modullar
             </a>
           </Link>
         </div>
