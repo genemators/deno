@@ -539,7 +539,7 @@ function Manual() {
                   <div className="sm:w-2/3 bg-gray-100 h-3 mt-10"/>
                   <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"/>
                   <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
-                  <div className="w-3/4 bg-gray-100 h-3 mt-4"></div>
+                  <div className="w-3/4 bg-gray-100 h-3 mt-4"/>
                   <div className="w-2/4 sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
                   <div className="sm:w-2/3 bg-gray-100 h-3 mt-4"></div>
                   <div className="w-3/4 bg-gray-100 h-3 mt-10"></div>
