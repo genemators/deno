@@ -368,7 +368,7 @@ const Registry = () => {
                             </div>
                             <div className="w-full p-4">
                               <div className="w-4/5 sm:w-1/3 bg-gray-100 h-8"/>
-                              <div className="sm:w-2/3 bg-gray-100 h-3 mt-6"></div>
+                              <div className="sm:w-2/3 bg-gray-100 h-3 mt-6"/>
                               <div className="w-5/6 sm:w-3/4 bg-gray-100 h-3 mt-4"></div>
                               <div className="sm:w-3/5 bg-gray-100 h-3 mt-4"></div>
                               <div className="w-3/4 bg-gray-100 h-3 mt-4"></div>
