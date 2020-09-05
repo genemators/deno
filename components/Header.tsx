@@ -174,16 +174,16 @@ const Header = ({
                   href="https://doc.deno.land/builtin/stable"
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
                 >
-                  Runtime API
+                  Yordamchi API
                 </a>
                 <Link href="/[...rest]" as="/std">
                   <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
-                    Standard Library
+                    Standart Modullar
                   </a>
                 </Link>
                 <Link href="/x">
                   <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
-                    Third Party Modules
+                    Uchinchi Darajali Modullar
                   </a>
                 </Link>
               </div>
