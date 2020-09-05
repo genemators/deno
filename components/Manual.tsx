@@ -570,7 +570,7 @@ function Version({
   return (
     <div className="mt-5 px-4">
       <label htmlFor="version" className="sr-only">
-        Version
+        Versiya
       </label>
       <div className="mt-1 sm:mt-0 sm:col-span-2">
         <div className="max-w-xs rounded-md shadow-sm">

@@ -91,7 +91,7 @@ const Registry = () => {
       getModule(name)
         .then(setModuleMeta)
         .catch((e) => {
-          console.error("Failed to fetch module meta:", e);
+          console.error("Module meta yuklash jarayonida xatolik yuz berdi:", e);
           setModuleMeta(null);
         });
     }
@@ -104,7 +104,7 @@ const Registry = () => {
       getVersionList(name)
         .then(setVersions)
         .catch((e) => {
-          console.error("Failed to fetch versions:", e);
+          console.error("Versiyalarni yuklash jarayonida xatolik yuz berdi:", e);
           setVersions(null);
         });
     }
@@ -132,7 +132,7 @@ const Registry = () => {
         getVersionMeta(name, version)
           .then(setVersionMeta)
           .catch((e) => {
-            console.error("Failed to fetch dir entry:", e);
+            console.error("Kirish qismidagi direktoriyalarni yuklash jarayonida xatolik yuz berdi:", e);
             setVersionMeta(null);
           });
       } else {
