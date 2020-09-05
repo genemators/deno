@@ -47,7 +47,7 @@ const Header = ({
               fill="none"
               viewBox="0 0 24 24"
             >
-              <title>Menu | Deno</title>
+              <title>Menyu | Deno</title>
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -60,23 +60,23 @@ const Header = ({
         <div className="hidden lg:flex md:ml-10 items-end">
           <Link href="/" as="/#installation">
             <a className="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
-              Install
+              O'rnatish
             </a>
           </Link>
           <Link href="/[...rest]" as="/manual">
             <a className="ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
-              Manual
+              Qo'llanma
             </a>
           </Link>
           <a
             href="https://doc.deno.land/builtin/stable"
             className="ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
           >
-            Runtime API
+            Yordamchi API
           </a>
           <Link href="/[...rest]" as="/std">
             <a className="ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
-              Standard Library
+              Standart Modullar
             </a>
           </Link>
           <Link href="/x">
