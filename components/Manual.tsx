@@ -385,7 +385,7 @@ function Manual() {
               <div className="flex-1 flex">
                 <div className="w-full flex justify-between h-full">
                   <label htmlFor="search_field" className="sr-only">
-                    Search
+                    Qidirish
                   </label>
                   <button
                     className="w-full text-gray-400 focus-within:text-gray-600 flex items-center"
