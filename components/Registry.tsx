@@ -356,7 +356,7 @@ const Registry = () => {
                         return (
                           <ErrorMessage
                             title="404 - Mavjud emas"
-                            body="This file or directory could not be found."
+                            body="Ko'rsatilgan fayl yoki direktoriya mavjud emas."
                           />
                         );
                       } else if (!dirEntries && typeof raw !== "string") {
