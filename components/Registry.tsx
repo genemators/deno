@@ -355,7 +355,7 @@ const Registry = () => {
                       ) {
                         return (
                           <ErrorMessage
-                            title="404 - Not Found"
+                            title="404 - Mavjud emas"
                             body="This file or directory could not be found."
                           />
                         );
