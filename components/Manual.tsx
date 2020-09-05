@@ -408,10 +408,12 @@ function Manual() {
                       </svg>
                     </div>
                     <div className="pl-6">
-                      <span className="inline sm:hidden">Search docs</span>
+                      <span className="inline sm:hidden">
+                        dokumentatsiya qidiruvi
+                      </span>
                       <span className="hidden sm:inline">
-                        Search the docs (press <InlineCode>/</InlineCode> to
-                        focus)
+                        Dokumentatsiya qidiruvi (diqqat qaratish uchun{" "}
+                        <InlineCode>/</InlineCode> tugmasini bosing)
                       </span>
                     </div>
                   </button>
@@ -447,7 +449,7 @@ function Manual() {
             <div className="h-16 bg-white shadow hidden md:block">
               <div className="max-w-screen-md mx-auto px-12 w-full flex justify-between h-full">
                 <label htmlFor="search_field" className="sr-only">
-                  Search
+                  Qidirish
                 </label>
                 <button
                   className="w-full text-gray-400 focus-within:text-gray-600 flex items-center"
@@ -468,7 +470,8 @@ function Manual() {
                     </svg>
                   </div>
                   <div className="pl-6">
-                    Search the docs (press <InlineCode>/</InlineCode> to focus)
+                    Dokumentatsiya bo'ylab qidirish (diqqat qaratish uchun{" "}
+                    <InlineCode>/</InlineCode> tugmasini bosing)
                   </div>
                 </button>
               </div>
